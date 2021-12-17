@@ -581,8 +581,17 @@ input:checked.check-form-almacen:after {
 
 /*------ALMACEN MENU------*/
 
-.navigation{
+.logo-nav{
+  width: 80%;
+  padding: 20px;
+  margin: auto;
   position: relative;
+}
+.img-logo-nav{
+  width: 100%;
+}
+.navigation{
+  position: fixed;
   height: 100vh;
   width: 70px;
   background: #141719;
@@ -590,6 +599,7 @@ input:checked.check-form-almacen:after {
   border-left: 10px solid #2b343b;
   overflow-x: hidden;
   transition: width 0.5s;
+  z-index: 2;
 }
 .navigation:hover{
   width: 300px;
@@ -600,7 +610,6 @@ input:checked.check-form-almacen:after {
   left: 0;
   width: 100%;
   padding-left: 5px;
-  padding-top: 40px;
 }
 .navigation ul li{
   position: relative;
@@ -614,7 +623,6 @@ input:checked.check-form-almacen:after {
 }
 .navigation ul li a{
   position: relative;
-  display: block;
   width: 100%;
   display: flex;
   text-decoration: none;
@@ -671,6 +679,45 @@ input:checked.check-form-almacen:after {
   position: absolute !important;
   bottom: 0;
   background: #000;
+  margin: 20px 0;
+}
+/*------PRODUCTOS------*/
+
+.cont-prod-prin{
+  width: calc(100% - 80px);
+  float: right;
+  position: relative;
+}
+.cont-prin{
+  width: 95%;
+  margin: 40px auto;
+}
+.header-prod-prin{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+}
+.title-head-prod{
+  width: 240px;
+  padding: 10px;
+}
+.title-prod{
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.icon-prod{
+  padding: 0 10px;
+}
+.cont-buttons-prod{
+
+}
+.btn-color-principal{
+  background: #1f44ca !important;
+  color: #fff !important;
 }
 
 /*-----FIN ALMACEN------*/
