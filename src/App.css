@@ -572,6 +572,107 @@ input:checked.check-form-almacen:after {
   color: #000;
 }
 
+/*------ALMACEN PRINCIPAL------*/
+
+.background-image-prin-almacen{
+  background-image: url("img/stock-background-02.jpg");
+  filter: brightness(0.5) blur(4px);
+}
+
+/*------ALMACEN MENU------*/
+
+.navigation{
+  position: relative;
+  height: 100vh;
+  width: 70px;
+  background: #141719;
+  box-shadow: 10px 0 0 #a66d2d;
+  border-left: 10px solid #2b343b;
+  overflow-x: hidden;
+  transition: width 0.5s;
+}
+.navigation:hover{
+  width: 300px;
+}
+.navigation ul{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 40px;
+}
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.navigation ul li.active{
+  background: #a66d2d;
+}
+.navigation ul li a{
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+.navigation ul li.active a::before{
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #141719;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #a66d2d;
+}
+.navigation ul li.active a::after{
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #141719;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #a66d2d;
+}
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+  position: relative;
+  font-size: 1.5em;
+  z-index: 1;
+}
+.navigation ul li a .title{
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+.ul-menu{
+  height: 100vh;
+  min-height: 500px;
+}
+.Sign-off{
+  position: absolute !important;
+  bottom: 0;
+  background: #000;
+}
+
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {
   from {
