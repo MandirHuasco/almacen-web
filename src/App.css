@@ -757,6 +757,10 @@ label{
   background-color: #1f44ca !important;
   color: #fff !important;
 }
+.cont-form-modal{
+  display: flex;
+  width: 100%;
+}
 .cont-form-left-right{
   width: 100%;
   display: flex;
@@ -771,6 +775,22 @@ label{
 }
 .form-three{
   width: 33.333333333%;
+}
+.qr-cont{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.title-cont-qr{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cont-qr{
+  margin-bottom: 100px;
 }
 
 /*-----FIN ALMACEN------*/
