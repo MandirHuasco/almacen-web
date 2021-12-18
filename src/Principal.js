@@ -1,37 +1,9 @@
-import React, {useRef, useState} from "react";
-import {faTicketAlt} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Badge, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import img101 from './img/logo-empresa-almacen.png';
 
-const ticket = <FontAwesomeIcon icon={faTicketAlt} />;
-
 function Principal() {
-
-
-
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_101, setModal_101] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_102, setModal_102] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_103, setModal_103] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_104, setModal_104] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_105, setModal_105] = useState(false);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_106, setModal_106] = useState(false);
-
-    const toggle_101 = () => setModal_101(!modal_101);
-    const toggle_102 = () => setModal_102(!modal_102);
-    const toggle_103 = () => setModal_103(!modal_103);
-    const toggle_104 = () => setModal_104(!modal_104);
-    const toggle_105 = () => setModal_105(!modal_105);
-    const toggle_106 = () => setModal_106(!modal_106);
 
     return (
 
@@ -40,7 +12,7 @@ function Principal() {
                 <div className="logo-nav">
                     <img src={img101} className="img-logo-nav"/>
                 </div>
-                <li className="list active">
+                <li className="list active list-pad">
                     <a href="#">
                         <span className="icon"><ion-icon name="cube-outline"></ion-icon></span>
                         <span className="title">Productos</span>

@@ -582,20 +582,21 @@ input:checked.check-form-almacen:after {
 /*------ALMACEN MENU------*/
 
 .logo-nav{
-  width: 80%;
-  padding: 20px;
+  width: 100%;
+  padding: 40px 60px;
   margin: auto;
-  position: relative;
+  position: absolute;
 }
 .img-logo-nav{
   width: 100%;
+  filter: grayscale(1);
 }
 .navigation{
   position: fixed;
   height: 100vh;
   width: 70px;
   background: #141719;
-  box-shadow: 10px 0 0 #a66d2d;
+  box-shadow: 10px 0 0 #1f44ca;
   border-left: 10px solid #2b343b;
   overflow-x: hidden;
   transition: width 0.5s;
@@ -619,7 +620,7 @@ input:checked.check-form-almacen:after {
   border-bottom-left-radius: 20px;
 }
 .navigation ul li.active{
-  background: #a66d2d;
+  background: #1f44ca;
 }
 .navigation ul li a{
   position: relative;
@@ -637,7 +638,7 @@ input:checked.check-form-almacen:after {
   height: 30px;
   background: #141719;
   border-radius: 50%;
-  box-shadow: 15px 15px 0 #a66d2d;
+  box-shadow: 15px 15px 0 #1f44ca;
 }
 .navigation ul li.active a::after{
   content: '';
@@ -648,7 +649,7 @@ input:checked.check-form-almacen:after {
   height: 30px;
   background: #141719;
   border-radius: 50%;
-  box-shadow: 15px -15px 0 #a66d2d;
+  box-shadow: 15px -15px 0 #1f44ca;
 }
 .navigation ul li a .icon{
   position: relative;
@@ -681,6 +682,9 @@ input:checked.check-form-almacen:after {
   background: #000;
   margin: 20px 0;
 }
+.list-pad{
+  margin-top: 250px;
+}
 /*------PRODUCTOS------*/
 
 .cont-prod-prin{
@@ -694,13 +698,16 @@ input:checked.check-form-almacen:after {
 }
 .header-prod-prin{
   width: 100%;
+  max-width: 1200px;
   display: flex;
+  margin: auto;
+  padding: 10px;
   align-items: center;
   background: #fff;
   border-radius: 20px;
 }
 .title-head-prod{
-  width: 240px;
+  width: 50%;
   padding: 10px;
 }
 .title-prod{
@@ -708,16 +715,62 @@ input:checked.check-form-almacen:after {
   font-size: 20px;
   text-align: center;
   letter-spacing: 5px;
+  left: 0;
+  display: flex;
 }
 .icon-prod{
   padding: 0 10px;
 }
 .cont-buttons-prod{
-
+  width: 50%;
+  position: relative;
 }
 .btn-color-principal{
+  display: flex !important;
+  align-items: center;
   background: #1f44ca !important;
   color: #fff !important;
+  float: right;
+  margin-left: 10px;
+  border-radius: 10px !important;
+}
+.icon-boton{
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.p-modal-prod{
+  font-size: 20px;
+  margin: 0;
+}
+.span-modal-prod{
+  font-size: 20px;
+}
+.cont-form-modal-prod{
+  width: 50%;
+  padding: 0 20px;
+}
+label{
+  margin-bottom: 10px;
+}
+.bg-form{
+  background-color: #1f44ca !important;
+  color: #fff !important;
+}
+.cont-form-left-right{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-left{
+  width: 50%;
+}
+.form-right{
+  width: 50%;
+}
+.form-three{
+  width: 33.333333333%;
 }
 
 /*-----FIN ALMACEN------*/
@@ -727,6 +780,11 @@ input:checked.check-form-almacen:after {
   }
   to {
   transform: rotate(360deg);
+  }
+}
+@media (min-width: 1200px) {
+  .modal-dialog{
+    max-width: 1100px !important;
   }
 }
 @media only screen and (max-width: 1200px) {
