@@ -1,16 +1,50 @@
-import React, {useState} from "react";
-import QRCode from "react-qr-code";
+import React, {useState, useRef} from "react";
+import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from '@material-ui/core';
 import Principal from "./Principal";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import QRCode from 'qrcode'
 
 function Productos() {
+
+    const [text, setText] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+    const [scanResultFile, setScanResultFile] = useState('');
+    const [scanResultWebCam, setScanResultWebCam] =  useState('');
+    const classes = useStyles();
+    const qrRef = useRef(null);
+
+
+    const generateQrCode = async () => {
+        try {
+            const response = await QRCode.toDataURL(text);
+            setImageUrl(response);
+        }catch (error) {
+            console.log(error);
+        }
+    }
+    const handleErrorFile = (error) => {
+        console.log(error);
+    }
+    const handleScanFile = (result) => {
+        if (result) {
+            setScanResultFile(result);
+        }
+    }
+    const onScanFile = () => {
+        qrRef.current.openImageDialog();
+    }
+    const handleErrorWebCam = (error) => {
+        console.log(error);
+    }
+    const handleScanWebCam = (result) => {
+        if (result){
+            setScanResultWebCam(result);
+        }
+    }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [modal_101, setModal_101] = useState(false);
     const toggle_101 = () => setModal_101(!modal_101);
-
-    // eslint-disable-next-line no-undef
-    JsBarcode(".barcode").init();
 
     return(
         <div className="App App-prin">
@@ -254,7 +288,27 @@ function Productos() {
                                                         <h2 className="title-prod qr-title">Código QR</h2>
                                                     </div>
                                                     <div className="qr-cont">
-                                                        <QRCode value="hey"/>
+                                                        <Container className={classes.conatiner}>
+                                                            <Card>
+                                                                <h2 className={classes.title}>Generate Download & Scan QR Code with React js</h2>
+                                                                <CardContent>
+                                                                    <Grid container spacing={2}>
+                                                                        <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
+                                                                            <TextField label="Enter Text Here" onChange={(e) => setText(e.target.value)}/>
+                                                                            <Button className={classes.btn} variant="contained"
+                                                                                    color="primary" onClick={() => generateQrCode()}>Generate</Button>
+                                                                            <br/>
+                                                                            <br/>
+                                                                            <br/>
+                                                                            {imageUrl ? (
+                                                                                <a href={imageUrl} download>
+                                                                                    <img src={imageUrl} alt="img"/>
+                                                                                </a>) : null}
+                                                                        </Grid>
+                                                                    </Grid>
+                                                                </CardContent>
+                                                            </Card>
+                                                        </Container>
                                                     </div>
                                                 </div>
 
@@ -262,12 +316,8 @@ function Productos() {
                                                     {/* eslint-disable-next-line no-undef */}
                                                     <h2 className="title-prod qr-title">Código de Barra {Date.now()}</h2>
                                                 </div>
-                                                <svg className="barcode"
-                                                     jsbarcode-format="upc"
-                                                     jsbarcode-value="123456789012"
-                                                     jsbarcode-textmargin="0"
-                                                     jsbarcode-fontoptions="bold">
-                                                </svg>
+
+
                                             </div>
                                         </div>
                                     </form>
@@ -292,4 +342,21 @@ function Productos() {
         </div>
     )
 }
+const useStyles = makeStyles((theme) => ({
+    conatiner: {
+        marginTop: 10
+    },
+    title: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems:  'center',
+        background: '#3f51b5',
+        color: '#fff',
+        padding: 20
+    },
+    btn : {
+        marginTop: 10,
+        marginBottom: 20
+    }
+}));
 export default Productos;
