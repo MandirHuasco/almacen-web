@@ -309,12 +309,44 @@ function Productos() {
                             <button type="button" className="btn btn-color-principal">Primary</button>
                         </div>
                     </div>
-                    <div className="body-prod-prin">
 
+                    <div className="body-prod-prin">
+                        <nav className="nav-cont">
+                            <div className="icon-nav">
+                                <span className="icon icon-prod-nav-prin">
+                                    <ion-icon name="git-merge-outline"></ion-icon>
+                                </span><h3 className="h3-nav-icon">TABLAS</h3>
+                            </div>
+                            <ul className="nav-ul">
+                                <li className="nav-li">
+                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div className="scrolling-wrapper">
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                            <div className="card"><h2>Card</h2></div>
+                        </div>
                     </div>
+
                     <div className="footer-prod-prin">
 
                     </div>
+
                 </div>
             </div>
 
