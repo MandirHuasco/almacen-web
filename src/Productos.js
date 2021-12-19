@@ -22,25 +22,6 @@ function Productos() {
             console.log(error);
         }
     }
-    const handleErrorFile = (error) => {
-        console.log(error);
-    }
-    const handleScanFile = (result) => {
-        if (result) {
-            setScanResultFile(result);
-        }
-    }
-    const onScanFile = () => {
-        qrRef.current.openImageDialog();
-    }
-    const handleErrorWebCam = (error) => {
-        console.log(error);
-    }
-    const handleScanWebCam = (result) => {
-        if (result){
-            setScanResultWebCam(result);
-        }
-    }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [modal_101, setModal_101] = useState(false);
@@ -290,21 +271,22 @@ function Productos() {
                                                     <div className="qr-cont">
                                                         <Container className={classes.conatiner}>
                                                             <Card>
-                                                                <h2 className={classes.title}>Generate Download & Scan QR Code with React js</h2>
+                                                                <h2 className={classes.title}>Ingrese el nombre de producto y genere un QR unico</h2>
                                                                 <CardContent>
                                                                     <Grid container spacing={2}>
-                                                                        <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
-                                                                            <TextField label="Enter Text Here" onChange={(e) => setText(e.target.value)}/>
-                                                                            <Button className={classes.btn} variant="contained"
-                                                                                    color="primary" onClick={() => generateQrCode()}>Generate</Button>
-                                                                            <br/>
-                                                                            <br/>
-                                                                            <br/>
-                                                                            {imageUrl ? (
-                                                                                <a href={imageUrl} download>
-                                                                                    <img src={imageUrl} alt="img"/>
-                                                                                </a>) : null}
-                                                                        </Grid>
+                                                                        <div className="cont-qr-flex">
+                                                                            <div className="cont-qr-flex-left">
+                                                                                <TextField label="Nombre de Producto" onChange={(e) => setText(e.target.value)}/>
+                                                                                <Button className={classes.btn} variant="contained" color="primary" onClick={() => generateQrCode()}>Generate</Button>
+                                                                                {imageUrl ? (
+                                                                                    <a href={imageUrl} className="img-qr" download>
+                                                                                        <img src={imageUrl} alt="img"/>
+                                                                                    </a>) : null}
+                                                                            </div>
+                                                                            <div className="cont-qr-flex-right">
+                                                                                <input type="text" value={imageUrl.replace('data:image/png;base64,','')} className="input-code" readOnly="readonly"/>
+                                                                            </div>
+                                                                        </div>
                                                                     </Grid>
                                                                 </CardContent>
                                                             </Card>
@@ -351,6 +333,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems:  'center',
         background: '#3f51b5',
+        fontSize: 20,
         color: '#fff',
         padding: 20
     },

@@ -792,6 +792,31 @@ label{
 .cont-qr{
   margin-bottom: 100px;
 }
+.cont-qr-flex{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-qr-flex-left{
+  width: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.cont-qr-flex-right{
+  width: 50%;
+}
+.img-qr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-code{
+  height: 230px;
+  width: 180px;
+  margin-left: 10px;
+}
 
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {
