@@ -8,15 +8,12 @@ function Productos() {
 
     const [text, setText] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [scanResultFile, setScanResultFile] = useState('');
-    const [scanResultWebCam, setScanResultWebCam] =  useState('');
     const classes = useStyles();
-    const qrRef = useRef(null);
 
 
     const generateQrCode = async () => {
         try {
-            const response = await QRCode.toDataURL(text);
+            const response = await QRCode.toDataURL(text + Date.now());
             setImageUrl(response);
         }catch (error) {
             console.log(error);
