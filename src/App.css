@@ -926,6 +926,12 @@ label{
   padding: 0 10px 10px;
   transition: .4s;
 }
+.div-on{
+  display: initial;
+}
+.div-off{
+  display: none;
+}
 
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {

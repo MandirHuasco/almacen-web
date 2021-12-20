@@ -5,13 +5,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import App from "./App.js";
-import Productos from "./Productos.js";
+import Principal from "./Principal";
 
 ReactDOM.render(
     <Router>
         <Routes>
             <Route exact path="/" element={<App/>} />
-            <Route exact path="/Productos" element={<Productos/>} />
+            <Route exact path="/Principal" element={<Principal/>} />
             <Route exact path="*" element={<App/>}/>
         </Routes>
     </Router>,

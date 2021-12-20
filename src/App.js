@@ -35,7 +35,7 @@ function App() {
                       <img src={img001} className="img-mini-logo-01 login-almacen-icon"/>
                   </div>
                   <div className="cont-form-sub">
-                      <form action="/Productos">
+                      <form action="/Principal">
                           <div className="input-form">
                               <input type="email" className="input-form-almacen" placeholder="Correo" required/>
                           </div>
