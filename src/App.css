@@ -680,7 +680,7 @@ input:checked.check-form-almacen:after {
   position: absolute !important;
   bottom: 0;
   background: #000;
-  margin: 20px 0;
+  margin: 40px 0;
 }
 .list-pad{
   margin-top: 250px;
@@ -698,7 +698,7 @@ input:checked.check-form-almacen:after {
 }
 .header-prod-prin{
   width: 100%;
-  max-width: 1200px;
+  max-width: 2200px;
   display: flex;
   margin: auto;
   padding: 10px;
@@ -819,12 +819,13 @@ label{
 }
 .body-prod-prin{
   width: 100%;
-  max-width: 1200px;
+  max-width: 2200px;
   margin: 20px auto;
   padding: 0;
   align-items: center;
   background: #fff;
   border-radius: 20px;
+  transition: .4s;
 }
 .nav-cont{
   width: 100%;
@@ -883,13 +884,13 @@ label{
   margin: 0;
 }
 .scrolling-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+  max-height: 70vh;
+  white-space: nowrap;
+  overflow: auto;
 }
 .cont-table-prod {
   position: relative;
-  display: block;
+  display: inline-block;
   margin: auto;
   flex-direction: column;
   min-width: 0;
@@ -901,6 +902,15 @@ label{
 }
 .table-cont-prod{
 
+}
+.tr-head-prod{
+  border-bottom: 3px solid #e5e5e5 !important;
+}
+.td-head-prod{
+  padding: 10px;
+  width: 100px;
+  display: inline-block;
+  max-width: 200px;
 }
 
 .table-on{
@@ -914,6 +924,7 @@ label{
 }
 .pading-card-active{
   padding: 0 10px 10px;
+  transition: .4s;
 }
 
 /*-----FIN ALMACEN------*/
