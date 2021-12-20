@@ -720,6 +720,8 @@ input:checked.check-form-almacen:after {
 }
 .icon-prod{
   padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
 }
 .cont-buttons-prod{
   width: 50%;
@@ -900,19 +902,23 @@ label{
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.25rem;
 }
-.table-cont-prod{
-
-}
 .tr-head-prod{
   border-bottom: 3px solid #e5e5e5 !important;
 }
 .td-head-prod{
   padding: 10px;
   width: 100px;
-  display: inline-block;
+  max-width: 200px;
+  font-weight: initial;
+}
+.tr-body-prod{
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+.td-body-prod{
+  overflow: auto;
+  padding: 10px;
   max-width: 200px;
 }
-
 .table-on{
   display: initial;
 }
@@ -931,6 +937,125 @@ label{
 }
 .div-off{
   display: none;
+}
+.cont-prod-cat-prin{
+  width: 100%;
+  padding: 20px;
+  background: #1f44ca;
+  border-radius: 20px;
+}
+.cont-fila-cat-head{
+  display: flex;
+  margin-bottom: 20px;
+}
+.caja-cont-cat-head{
+  width: 100%;
+  display: inline-flex;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px;
+}
+.title-cat{
+  width: 50%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-left: 10px;
+}
+.button-cat{
+  width: 50%;
+  position: relative;
+}
+.h2-cat{
+  font-size: 16px;
+  margin: 0;
+  left: 0;
+  display: flex;
+}
+.cont-fila-cat{
+  display: flex;
+  flex-wrap: wrap;
+}
+.caja-cont-cat{
+  width: 22%;
+  background: #fff;
+  padding: 10px;
+  margin: 1.5%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px;
+  transition: .4s;
+}
+.caja-cont-cat:hover{
+  box-shadow: 1px 10px 16px #000;
+}
+.title-cat-box{
+  width: 100%;
+  margin-left: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #1f44ca;
+}
+.img-cat{
+  width: 150px;
+  margin: auto;
+  padding: 20px;
+}
+.img-cat-file{
+  width: 100%;
+}
+.body-cat{
+  width: 100%;
+  display: block;
+}
+.img-cat{
+  width: 50%;
+  display: inline-flex;
+}
+.block-cont-cat{
+  display: flex;
+  align-items: center;
+}
+.info-cat{
+  width: 100%;
+}
+.p-info-cat{
+  margin: 0;
+}
+.span-info-cat{
+  font-weight: 770;
+  color: #1149a5;
+}
+.img-cat-modal{
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+.cont-form-modal-cat{
+  width: 100%;
+  padding: 0 20px;
+}
+.div-buton-modal{
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  margin: 10px auto;
+  border-top: 1px solid #a8a8a8;
+}
+.btn-modal-prod{
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.display-contents-cat{
+  display: contents;
+  color: #000;
+  text-decoration: none;
+  transition: .4s;
+}
+.display-contents-cat:hover{
+  color: #000;
 }
 
 /*-----FIN ALMACEN------*/

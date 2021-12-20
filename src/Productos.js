@@ -3,6 +3,7 @@ import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from 
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from 'qrcode'
 import TableProductos from "./Vistas/TableProd";
+import TableProductosCatPrin from "./Vistas/TableCatPrin";
 
 function Productos() {
 
@@ -371,6 +372,10 @@ function Productos() {
                                                 <h2 className="title-prod qr-title">Código de Barra {Date.now()}</h2>
                                             </div>
 
+                                            <div className="div-buton-modal">
+                                                <button type="button" className="btn btn-color-principal btn-modal-prod">GUARDAR</button>
+                                            </div>
+
 
                                         </div>
                                     </div>
@@ -408,17 +413,16 @@ function Productos() {
                         </ul>
                     </nav>
 
-                    <div className="scrolling-wrapper">
-                        <div id="item-table-01" className={stylea}>
-                            <TableProductos/>
-                        </div>
-                        <div id="item-table-02" className={styleb}>
-                            <TableProductos/>
-                        </div>
-                        <div id="item-table-03" className={stylec}>
-                            <TableProductos/>
-                        </div>
+                    <div id="item-table-01" className={stylea}>
+                        <TableProductos/>
                     </div>
+                    <div id="item-table-02" className={styleb}>
+                        <TableProductosCatPrin/>
+                    </div>
+                    <div id="item-table-03" className={stylec}>
+                        <TableProductos/>
+                    </div>
+
                 </div>
 
                 <div className="footer-prod-prin">
