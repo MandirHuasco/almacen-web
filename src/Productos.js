@@ -3,6 +3,7 @@ import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from 
 import Principal from "./Principal";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from 'qrcode'
+import TableProductos from "./Vistas/TableProd";
 
 function Productos() {
 
@@ -19,6 +20,87 @@ function Productos() {
             console.log(error);
         }
     }
+
+    const [style, setStyle] = useState("");
+
+    const [stylea, setStylea] = useState("table-off");
+    const [styleA, setStyleA] = useState("");
+
+    const [styleb, setStyleb] = useState("table-off");
+    const [styleB, setStyleB] = useState("");
+
+    const [stylec, setStylec] = useState("table-off");
+    const [styleC, setStyleC] = useState("");
+
+    const [stylex, setStylex] = useState("table-off");
+
+    const changeStyleA = () => {
+        console.log("menu-action-A");
+
+        setStyle("pading-card-active");
+
+        setStyleA("nav-border-bottom-active");
+        setStylea("table-on");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStylex("table-on");
+    };
+
+    const changeStyleB = () => {
+        console.log("menu-action-B");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("nav-border-bottom-active");
+        setStyleb("table-on");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStylex("table-on");
+    };
+
+    const changeStyleC = () => {
+        console.log("menu-action-C");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("nav-border-bottom-active");
+        setStylec("table-on");
+
+        setStylex("table-on");
+    };
+
+    const changeStyleX = () => {
+        console.log("menu-action-X");
+
+        setStyle("");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStylex("table-off");
+    };
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [modal_101, setModal_101] = useState(false);
@@ -310,7 +392,7 @@ function Productos() {
                         </div>
                     </div>
 
-                    <div className="body-prod-prin">
+                    <div className={style + " body-prod-prin"}>
                         <nav className="nav-cont">
                             <div className="icon-nav">
                                 <span className="icon icon-prod-nav-prin">
@@ -319,27 +401,30 @@ function Productos() {
                             </div>
                             <ul className="nav-ul">
                                 <li className="nav-li">
-                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                                    <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
                                 </li>
                                 <li className="nav-li">
-                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                                    <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
                                 </li>
                                 <li className="nav-li">
-                                    <a className="nav-link" href="#"><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                                    <a className={styleC + " nav-link"} href="#" onClick={changeStyleC}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                                </li>
+                                <li className={stylex + " nav-li"}>
+                                    <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                                 </li>
                             </ul>
                         </nav>
 
                         <div className="scrolling-wrapper">
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
-                            <div className="card"><h2>Card</h2></div>
+                            <div id="item-table-01" className={stylea}>
+                                <TableProductos/>
+                            </div>
+                            <div id="item-table-02" className={styleb}>
+                                <TableProductos/>
+                            </div>
+                            <div id="item-table-03" className={stylec}>
+                                <TableProductos/>
+                            </div>
                         </div>
                     </div>
 

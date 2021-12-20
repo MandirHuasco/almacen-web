@@ -821,7 +821,7 @@ label{
   width: 100%;
   max-width: 1200px;
   margin: 20px auto;
-  padding: 0 10px 10px;
+  padding: 0;
   align-items: center;
   background: #fff;
   border-radius: 20px;
@@ -848,6 +848,7 @@ label{
   border-bottom: 3px solid #e5e5e5;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
   transition: .4s;
 }
 .nav-li a:hover{
@@ -881,14 +882,38 @@ label{
   align-items: center;
   margin: 0;
 }
-
 .scrolling-wrapper {
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
 }
-.card {
-  display: inline-block;
+.cont-table-prod {
+  position: relative;
+  display: block;
+  margin: auto;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}
+.table-cont-prod{
+
+}
+
+.table-on{
+  display: initial;
+}
+.table-off{
+  display: none;
+}
+.nav-border-bottom-active{
+  border-bottom: 3px solid #000 !important;
+}
+.pading-card-active{
+  padding: 0 10px 10px;
 }
 
 /*-----FIN ALMACEN------*/
