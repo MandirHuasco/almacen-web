@@ -2,11 +2,29 @@ import React, {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import imgFile from '../img/file-img.png';
 import {Button, Card, CardContent, Container, Grid, TextField} from "@material-ui/core";
+import TableProductos from "./TableProd";
 
 function TableProductosCatPrin() {
 
     const [modal_102, setModal_102] = useState(false);
     const toggle_102 = () => setModal_102(!modal_102);
+
+    const [styleCat, setStyleCat] = useState("table-off");
+    const [styleCatSecond, setStyleCatSecond] = useState("");
+
+    const changeStyleCat = () => {
+        console.log("action-cat-table");
+
+        setStyleCat("table-on");
+        setStyleCatSecond("div-off");
+    };
+
+    const changeStyleCatx = () => {
+        console.log("action-cat-cerrar");
+
+        setStyleCat("table-off");
+        setStyleCatSecond("div-on-contents");
+    };
 
     return(
         <div className="cont-prod-cat-prin">
@@ -22,7 +40,7 @@ function TableProductosCatPrin() {
                             <ModalHeader toggle={toggle_102}>
                                 <p className="p-modal p-modal-prod">NUEVA <span className="span-modal span-modal-prod">CATEGORIA</span>.</p>
                                 <div className="img-cat-modal">
-                                    <img src={imgFile} className="img-cat-file"/>
+                                    <img src={imgFile} className="img-cat-file" alt=""/>
                                 </div>
                             </ModalHeader>
                             <ModalBody>
@@ -40,7 +58,7 @@ function TableProductosCatPrin() {
                                             </div>
                                         </div>
                                         <div className="div-buton-modal div-buton-modal-cat">
-                                            <button type="button" className="btn btn-color-principal btn-modal-prod">GUARDAR</button>
+                                            <button type="button" className="btn btn-color-principal btn-modal-prod"><span className="icon-boton"><ion-icon name="save-outline"></ion-icon></span>GUARDAR</button>
                                         </div>
                                     </div>
                                 </form>
@@ -54,82 +72,36 @@ function TableProductosCatPrin() {
                 </div>
             </div>
             <div className="cont-fila-cat">
-                <a href="#" className="display-contents-cat">
-                    <div className="caja-cont-cat">
-                        <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
-                        <div className="body-cat">
-                            <div className="img-cat">
-                                <img src={imgFile} className="img-cat-file"/>
-                            </div>
-                            <div className="block-cont-cat">
-                                <div className="info-cat">
-                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
+                <div className={styleCatSecond + " display-contents"}>
+                    <a href="#" onClick={changeStyleCat} className="display-contents-cat">
+                        <div className="caja-cont-cat">
+                            <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
+                            <div className="body-cat">
+                                <div className="img-cat">
+                                    <img src={imgFile} className="img-cat-file"/>
+                                </div>
+                                <div className="block-cont-cat">
+                                    <div className="info-cat">
+                                        <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#" className="display-contents-cat">
-                    <div className="caja-cont-cat">
-                        <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
-                        <div className="body-cat">
-                            <div className="img-cat">
-                                <img src={imgFile} className="img-cat-file"/>
-                            </div>
-                            <div className="block-cont-cat">
-                                <div className="info-cat">
-                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
-                                </div>
+                    </a>
+                </div>
+                <div className={styleCat + " table-cat"}>
+                    <div className="caja-cont-cat-head margin-bottom-20">
+                        <div className="title-cat">
+                            <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="folder-open-outline"></ion-icon></span>CATEGORIA_<span className="span-cat">MUEBLES</span></h2>
+                        </div>
+                        <div className="button-cat">
+                            <div className="cerrar-caja-cat">
+                                <a className="nav-link-cat" onClick={changeStyleCatx} href="#"><span className="icon icon-prod-nav"><ion-icon name="close-outline" role="img" className="md hydrated" aria-label="close outline"></ion-icon></span>Cerrar</a>
                             </div>
                         </div>
                     </div>
-                </a>
-                <a href="#" className="display-contents-cat">
-                    <div className="caja-cont-cat">
-                        <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
-                        <div className="body-cat">
-                            <div className="img-cat">
-                                <img src={imgFile} className="img-cat-file"/>
-                            </div>
-                            <div className="block-cont-cat">
-                                <div className="info-cat">
-                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" className="display-contents-cat">
-                    <div className="caja-cont-cat">
-                        <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
-                        <div className="body-cat">
-                            <div className="img-cat">
-                                <img src={imgFile} className="img-cat-file"/>
-                            </div>
-                            <div className="block-cont-cat">
-                                <div className="info-cat">
-                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" className="display-contents-cat">
-                    <div className="caja-cont-cat">
-                        <div className="title-cat title-cat-box"><span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01</div>
-                        <div className="body-cat">
-                            <div className="img-cat">
-                                <img src={imgFile} className="img-cat-file"/>
-                            </div>
-                            <div className="block-cont-cat">
-                                <div className="info-cat">
-                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
+                    <TableProductos/>
+                </div>
             </div>
         </div>
     )

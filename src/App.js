@@ -26,7 +26,7 @@ function App() {
 
           <div className="cont-body-login-almacen">
               <div className="cont-form-almacen">
-                  <img src={img002} className="img-login-almacen"/>
+                  <img src={img002} className="img-login-almacen" alt=""/>
               </div>
 
 

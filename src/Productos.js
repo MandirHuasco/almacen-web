@@ -7,6 +7,7 @@ import TableProductosCatPrin from "./Vistas/TableCatPrin";
 import TableProductosInactivos from "./Vistas/TableProdInactive";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import TableProductosActive from "./Vistas/TableProdActive";
 
 function Productos() {
 
@@ -35,6 +36,9 @@ function Productos() {
     const [stylec, setStylec] = useState("table-off");
     const [styleC, setStyleC] = useState("");
 
+    const [styled, setStyled] = useState("table-off");
+    const [styleD, setStyleD] = useState("");
+
     const [stylex, setStylex] = useState("table-off");
 
     const changeStyleA = () => {
@@ -50,6 +54,9 @@ function Productos() {
 
         setStyleC("");
         setStylec("table-off");
+
+        setStyleD("");
+        setStyled("table-off");
 
         setStylex("table-on");
     };
@@ -68,6 +75,9 @@ function Productos() {
         setStyleC("");
         setStylec("table-off");
 
+        setStyleD("");
+        setStyled("table-off");
+
         setStylex("table-on");
     };
 
@@ -85,6 +95,29 @@ function Productos() {
         setStyleC("nav-border-bottom-active");
         setStylec("table-on");
 
+        setStyleD("");
+        setStyled("table-off");
+
+        setStylex("table-on");
+    };
+
+    const changeStyleD = () => {
+        console.log("menu-action-C");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStyleD("nav-border-bottom-active");
+        setStyled("table-on");
+
         setStylex("table-on");
     };
 
@@ -101,6 +134,9 @@ function Productos() {
 
         setStyleC("");
         setStylec("table-off");
+
+        setStyleD("");
+        setStyled("table-off");
 
         setStylex("table-off");
     };
@@ -376,7 +412,7 @@ function Productos() {
                                             </div>
 
                                             <div className="div-buton-modal">
-                                                <button type="button" className="btn btn-color-principal btn-modal-prod">GUARDAR</button>
+                                                <button type="button" className="btn btn-color-principal btn-modal-prod"><span className="icon-boton"><ion-icon name="save-outline"></ion-icon></span> GUARDAR</button>
                                             </div>
 
 
@@ -402,13 +438,16 @@ function Productos() {
                         </div>
                         <ul className="nav-ul">
                             <li className="nav-li">
-                                <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                                <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
                             </li>
                             <li className="nav-li">
-                                <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                                <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
                             </li>
                             <li className="nav-li">
-                                <a className={styleC + " nav-link"} href="#" onClick={changeStyleC}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                                <a className={styleC + " nav-link"} href="#" onClick={changeStyleC}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                            </li>
+                            <li className="nav-li">
+                                <a className={styleD + " nav-link"} href="#" onClick={changeStyleD}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
                             </li>
                             <li className={stylex + " nav-li"}>
                                 <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
@@ -425,10 +464,13 @@ function Productos() {
                     <div id="item-table-01" className={stylea}>
                         <TableProductos/>
                     </div>
-                    <div id="item-table-02" className={styleb}>
+                    <div id="item-table-01" className={styleb}>
+                        <TableProductosActive/>
+                    </div>
+                    <div id="item-table-02" className={stylec}>
                         <TableProductosCatPrin/>
                     </div>
-                    <div id="item-table-03" className={stylec}>
+                    <div id="item-table-03" className={styled}>
                         <TableProductosInactivos/>
                     </div>
 

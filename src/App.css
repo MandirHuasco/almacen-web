@@ -1083,6 +1083,44 @@ label{
 .color-white{
   color: #fff !important;
 }
+.table-cat{
+  width: 100%;
+}
+.margin-bottom-20{
+  margin-bottom: 20px;
+}
+.span-cat{
+  font-size: 16px;
+  font-weight: 800;
+  color: #e56d34;
+}
+.nav-link-cat{
+  display: inline-flex;
+  color: #5f5f5f;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .4s;
+}
+.nav-link-cat:hover{
+  color: #000;
+}
+.cerrar-caja-cat{
+  display: grid;
+  width: fit-content;
+  float: right;
+}
+.div-on-contents{
+  display: contents;
+}
+.tr-head-prod-activo{
+  border-bottom: 3px solid #e5e5e5 !important;
+  background: #319027;
+  color: #fff;
+}
 
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {
