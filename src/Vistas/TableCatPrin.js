@@ -39,6 +39,9 @@ function TableProductosCatPrin() {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="div-buton-modal div-buton-modal-cat">
+                                            <button type="button" className="btn btn-color-principal btn-modal-prod">GUARDAR</button>
+                                        </div>
                                     </div>
                                 </form>
                             </ModalBody>
@@ -126,7 +129,7 @@ function TableProductosCatPrin() {
                         </div>
                     </div>
                 </a>
-                
+
             </div>
         </div>
     )

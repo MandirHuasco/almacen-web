@@ -4,6 +4,7 @@ import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from 'qrcode'
 import TableProductos from "./Vistas/TableProd";
 import TableProductosCatPrin from "./Vistas/TableCatPrin";
+import TableProductosInactivos from "./Vistas/TableProdInactive";
 
 function Productos() {
 
@@ -420,7 +421,7 @@ function Productos() {
                         <TableProductosCatPrin/>
                     </div>
                     <div id="item-table-03" className={stylec}>
-                        <TableProductos/>
+                        <TableProductosInactivos/>
                     </div>
 
                 </div>

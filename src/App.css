@@ -514,7 +514,7 @@ input:checked.check-form:after{
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid #89491a;
+  border-bottom: 2px solid #90a1ea;
   font-size: 20px;
   text-align: center;
   letter-spacing: 5px;
@@ -536,39 +536,39 @@ input:checked.check-form:after{
   color: #fff;
 }
 .check-form-almacen{
-  box-shadow: 0 0 0 4px #a05722,
+  box-shadow: 0 0 0 4px #9db1f8,
               0 0 0 5px #3e3e3e,
               inset 0 0 10px
               rgba(0,0,0,1), 0 5px 20px rgba(0,0,0,.5),
               inset 0 0 15px rgba(0,0,0,.2);
 }
 input:checked.check-form-almacen{
-  background: linear-gradient(0deg, #bababa, #a77979);
+  background: linear-gradient(0deg, #a5edff, #82b7ff);
   box-shadow: 0 0 2px #ffffff,
-              0 0 0 4px #a05722,
+              0 0 0 4px #9db1f8,
               0 0 0 5px #3e3e3e,
               inset 0 0 10px
               rgba(0,0,0,1), 0 5px 20px rgba(0,0,0,.5),
               inset 0 0 15px rgba(0,0,0,.2);
 }
 .check-form-almacen:before{
-  background: linear-gradient(0deg, #a05722, #f27d29);
+  background: linear-gradient(0deg, #456dff, #a3b7ff);
 }
 input:checked.check-form-almacen:after {
   background: #ffffff;
   left: 105px;
-  box-shadow: 0 0 5px #dbf8e2, 0 0 15px #d7f6e7;
+  box-shadow: 0 0 5px #9db1f8, 0 0 15px #d7f6e7;
 }
 .input-submit-almacen{
-  background: #9c541e;
+  background: #1f44ca;
 }
 .input-submit-almacen:hover{
-  background: #df7427;
+  background: #617bda;
   color: #fff;
   filter: drop-shadow(4px 8px 12px black);
 }
 .error-report-almacen{
-  background: #ffd006;
+  background: #dbe2ff;
   color: #000;
 }
 
@@ -762,6 +762,7 @@ label{
 .cont-form-modal{
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 .cont-form-left-right{
   width: 100%;
@@ -1056,6 +1057,15 @@ label{
 }
 .display-contents-cat:hover{
   color: #000;
+}
+.div-buton-modal-cat{
+  margin: 10px 0 0;
+  padding: 20px 0 0;
+}
+.tr-head-prod-inactivo{
+  border-bottom: 3px solid #e5e5e5 !important;
+  background: #f00;
+  color: #fff;
 }
 
 /*-----FIN ALMACEN------*/
