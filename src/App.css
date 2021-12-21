@@ -937,10 +937,10 @@ label{
   transition: .4s;
 }
 .div-on{
-  display: initial;
+  display: initial !important;
 }
 .div-off{
-  display: none;
+  display: none !important;
 }
 .cont-prod-cat-prin{
   width: 100%;
@@ -997,6 +997,7 @@ label{
 .title-cat-box{
   width: 100%;
   margin-left: 0;
+  color: #000;
   padding-bottom: 10px;
   border-bottom: 3px solid #1f44ca;
 }
@@ -1096,6 +1097,7 @@ label{
 }
 .nav-link-cat{
   display: inline-flex;
+  padding: 0 10px;
   color: #5f5f5f;
   font-size: 14px;
   letter-spacing: 1px;
@@ -1121,6 +1123,52 @@ label{
   background: #319027;
   color: #fff;
 }
+.cont-form-modal-alm{
+  width: 100%;
+  padding: 0 20px;
+}
+.icon-options-box{
+  display: flex;
+  width: 50%;
+  position: relative;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: .4s;
+}
+.icon-options-box:hover{
+  filter: drop-shadow(2px 4px 6px #1f44ca);
+}
+.options-open{
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #aebfff;
+  border-radius: 10px;
+}
+.nav-li-options a{
+  padding: 10px;
+  border-bottom: none;
+}
+.nav-li-options a:hover{
+  border-radius: 10px;
+}
+.nav-li-options a:focus{
+  border-bottom: none;
+}
+.nav-ul-options{
+  display: block;
+  padding: 0;
+}
+.button-activate{
+  filter: drop-shadow(2px 4px 6px #1f44ca);
+}
+.nav-link-box{
+  padding: 0 !important;
+}
 
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {
@@ -1132,7 +1180,7 @@ label{
   }
 }
 @media (min-width: 1200px) {
-  .modal-dialog{
+  .prod-modal{
     max-width: 1100px !important;
   }
 }

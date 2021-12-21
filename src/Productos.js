@@ -155,7 +155,7 @@ function Productos() {
                     <div className="cont-buttons-prod">
                         <button type="button" onClick={() => toggle_101()} className="btn btn-color-principal" ><span className="icon-boton"><ion-icon name="add-circle-outline"></ion-icon></span>Agregar</button>
 
-                        <Modal isOpen={modal_101} toggle={toggle_101}>
+                        <Modal isOpen={modal_101} toggle={toggle_101} className="prod-modal">
                             <ModalHeader toggle={toggle_101}>
                                 <p className="p-modal p-modal-prod">NUEVO <span className="span-modal span-modal-prod">PRODUCTO</span>.</p>
                             </ModalHeader>
@@ -425,7 +425,7 @@ function Productos() {
                             </ModalFooter>
                         </Modal>
 
-                        <button type="button" className="btn btn-color-principal">Primary</button>
+                        <button type="button" className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
                     </div>
                 </div>
 

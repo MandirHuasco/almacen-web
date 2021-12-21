@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import img101 from './img/logo-empresa-almacen.png';
 import Productos from "./Productos";
+import Almacen from "./Almacen";
 
 function Principal() {
 
@@ -14,13 +15,13 @@ function Principal() {
     const [styleActiveF, setStyleActiveF] = useState("");
     const [styleActiveG, setStyleActiveG] = useState("");
 
-    const [styleviewA, setStyleviewA] = useState("");
-    const [styleviewB, setStyleviewB] = useState("");
-    const [styleviewC, setStyleviewC] = useState("");
-    const [styleviewD, setStyleviewD] = useState("");
-    const [styleviewE, setStyleviewE] = useState("");
-    const [styleviewF, setStyleviewF] = useState("");
-    const [styleviewG, setStyleviewG] = useState("");
+    const [styleviewA, setStyleviewA] = useState("div-off");
+    const [styleviewB, setStyleviewB] = useState("div-off");
+    const [styleviewC, setStyleviewC] = useState("div-off");
+    const [styleviewD, setStyleviewD] = useState("div-off");
+    const [styleviewE, setStyleviewE] = useState("div-off");
+    const [styleviewF, setStyleviewF] = useState("div-off");
+    const [styleviewG, setStyleviewG] = useState("div-off");
 
 
     const changeStyleActiveA = () => {
@@ -225,7 +226,7 @@ function Principal() {
                 <Productos/>
             </div>
             <div className={styleviewB}>
-                B
+                <Almacen/>
             </div>
             <div className={styleviewC}>
                 C
