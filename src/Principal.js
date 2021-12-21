@@ -165,9 +165,11 @@ function Principal() {
 
     return (
 
-        <div className="App App-prin">
+        <div className="App">
+            {/*
             <div className="background-image background-image-prin background-image-prin-almacen">
             </div>
+            */}
 
             <div className="navigation">
                 <ul className="ul-menu">

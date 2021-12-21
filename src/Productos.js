@@ -1,10 +1,12 @@
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from '@material-ui/core';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from 'qrcode'
 import TableProductos from "./Vistas/TableProd";
 import TableProductosCatPrin from "./Vistas/TableCatPrin";
 import TableProductosInactivos from "./Vistas/TableProdInactive";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 function Productos() {
 
@@ -412,6 +414,12 @@ function Productos() {
                                 <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
+                        <div className="cont-search">
+                            <input className="form-control inputBuscar" placeholder="Búscar..."/>
+                            <button className="btn bg-almacen color-white">
+                                <FontAwesomeIcon icon={faSearch}/>
+                            </button>
+                        </div>
                     </nav>
 
                     <div id="item-table-01" className={stylea}>
