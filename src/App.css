@@ -843,6 +843,8 @@ label{
   align-items: center;
 }
 .nav-li{
+  display: flex;
+  justify-content: left;
   list-style: none;
 }
 .nav-li a{
@@ -927,7 +929,7 @@ label{
   display: initial;
 }
 .table-off{
-  display: none;
+  display: none !important;
 }
 .nav-border-bottom-active{
   border-bottom: 3px solid #000 !important;
@@ -1132,7 +1134,6 @@ label{
   width: 50%;
   position: relative;
   justify-content: flex-end;
-  cursor: pointer;
   transition: .4s;
 }
 .icon-options-box:hover{
@@ -1150,6 +1151,7 @@ label{
   border-radius: 10px;
 }
 .nav-li-options a{
+  width: 100%;
   padding: 10px;
   border-bottom: none;
 }
@@ -1168,6 +1170,34 @@ label{
 }
 .nav-link-box{
   padding: 0 !important;
+}
+.title-cat-box-flex{
+  display: flex;
+  width: 50%;
+  position: relative;
+}
+.caja-cont-cat-alm{
+  width: 30.33333333333333%;
+}
+.recuperar{
+  border-bottom: 1px solid #c0c0c0;
+  background: #b8f7b8;
+}
+.cont-prod-cat-prin-inactive{
+  background: #0c1e42;
+}
+.inhabilitar-nav-li{
+  border-bottom: 1px solid #c0c0c0;
+  background: #ff6262;
+}
+.inhabilitar-nav-li a{
+  color: #fff;
+}
+.mode-oscuro{
+  background: #000 !important;
+}
+.mode-oscuro-letra{
+  color: #fff !important;
 }
 
 /*-----FIN ALMACEN------*/

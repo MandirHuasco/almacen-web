@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import TableProductosActive from "./Vistas/TableProdActive";
 import AlmacenPrin from "./Vistas/AlmacenPrin";
+import AlmacenInactive from "./Vistas/AlmacenInactive";
 
 function Almacen() {
 
@@ -83,12 +83,12 @@ function Almacen() {
                                     <div className="cont-form-modal">
                                         <div className="cont-form-modal-alm">
                                             <div className="form-group">
-                                                <label htmlFor="prod-name">Ingrese producto</label>
+                                                <label htmlFor="prod-name">Ingrese almacen</label>
                                                 <div className="input-group mb-3">
                                                     <div className="input-group-prepend">
                                                         <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="cube-outline"></ion-icon></span>Descripción</span>
                                                     </div>
-                                                    <input type="text" id="prod-name" className="form-control" placeholder="Nombre producto" aria-label="Username" aria-describedby="basic-addon1"/>
+                                                    <input type="text" id="prod-name" className="form-control" placeholder="Nombre almacen" aria-label="Username" aria-describedby="basic-addon1"/>
                                                 </div>
                                             </div>
 
@@ -96,9 +96,9 @@ function Almacen() {
                                                 {/*<label htmlFor="prod-marca">Marca</label>*/}
                                                 <div className="input-group mb-3">
                                                     <div className="input-group-prepend">
-                                                        <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="scan-outline"></ion-icon></span>Marca</span>
+                                                        <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="scan-outline"></ion-icon></span>Dirección</span>
                                                     </div>
-                                                    <input type="text" id="prod-marca" className="form-control" placeholder="DELL, CANON, IBM, ..." aria-label="Username" aria-describedby="basic-addon1"/>
+                                                    <input type="text" id="prod-marca" className="form-control" placeholder="Av,jr,pje..." aria-label="Username" aria-describedby="basic-addon1"/>
                                                 </div>
                                             </div>
                                             <button type="button" className="btn btn-color-principal btn-modal-prod"><span className="icon-boton"><ion-icon name="save-outline"></ion-icon></span> GUARDAR</button>
@@ -133,7 +133,7 @@ function Almacen() {
                                 <a className=" nav-link" href="#" onClick={changeStyleAlmX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
-                        <div className="cont-search">
+                        <div className={styleAlmx + " cont-search"}>
                             <input className="form-control inputBuscar" placeholder="Búscar..."/>
                             <button className="btn bg-almacen color-white">
                                 <FontAwesomeIcon icon={faSearch}/>
@@ -145,7 +145,7 @@ function Almacen() {
                         <AlmacenPrin/>
                     </div>
                     <div id="item-table-01" className={styleAlmb}>
-                        <TableProductosActive/>
+                        <AlmacenInactive/>
                     </div>
 
                 </div>

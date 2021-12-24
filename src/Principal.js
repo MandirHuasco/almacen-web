@@ -14,6 +14,7 @@ function Principal() {
     const [styleActiveE, setStyleActiveE] = useState("");
     const [styleActiveF, setStyleActiveF] = useState("");
     const [styleActiveG, setStyleActiveG] = useState("");
+    const [styleActiveX, setStyleActiveX] = useState("active");
 
     const [styleviewA, setStyleviewA] = useState("div-off");
     const [styleviewB, setStyleviewB] = useState("div-off");
@@ -22,6 +23,7 @@ function Principal() {
     const [styleviewE, setStyleviewE] = useState("div-off");
     const [styleviewF, setStyleviewF] = useState("div-off");
     const [styleviewG, setStyleviewG] = useState("div-off");
+    const [styleviewX, setStyleviewX] = useState("div-on");
 
 
     const changeStyleActiveA = () => {
@@ -34,6 +36,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-off");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("active");
         setStyleActiveB("");
@@ -42,6 +45,7 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveB = () => {
@@ -54,6 +58,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-off");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("active");
@@ -62,6 +67,7 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveC = () => {
@@ -74,6 +80,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-off");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("");
@@ -82,6 +89,7 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveD = () => {
@@ -94,6 +102,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-off");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("");
@@ -102,6 +111,7 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveE = () => {
@@ -114,6 +124,7 @@ function Principal() {
         setStyleviewE("div-on");
         setStyleviewF("div-off");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("");
@@ -122,6 +133,7 @@ function Principal() {
         setStyleActiveE("active");
         setStyleActiveF("");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveF = () => {
@@ -134,6 +146,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-on");
         setStyleviewG("div-off");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("");
@@ -142,6 +155,7 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("active");
         setStyleActiveG("");
+        setStyleActiveX("");
     };
 
     const changeStyleActiveG = () => {
@@ -154,6 +168,7 @@ function Principal() {
         setStyleviewE("div-off");
         setStyleviewF("div-off");
         setStyleviewG("div-on");
+        setStyleviewX("div-off");
 
         setStyleActiveA("");
         setStyleActiveB("");
@@ -162,6 +177,29 @@ function Principal() {
         setStyleActiveE("");
         setStyleActiveF("");
         setStyleActiveG("active");
+        setStyleActiveX("");
+    };
+
+    const changeStyleActiveX = () => {
+        console.log("menu-action-Active-X");
+
+        setStyleviewA("div-off");
+        setStyleviewB("div-off");
+        setStyleviewC("div-off");
+        setStyleviewD("div-off");
+        setStyleviewE("div-off");
+        setStyleviewF("div-off");
+        setStyleviewG("div-off");
+        setStyleviewX("div-on");
+
+        setStyleActiveA("");
+        setStyleActiveB("");
+        setStyleActiveC("");
+        setStyleActiveD("");
+        setStyleActiveE("");
+        setStyleActiveF("");
+        setStyleActiveG("");
+        setStyleActiveX("active");
     };
 
     return (
@@ -177,7 +215,13 @@ function Principal() {
                     <div className="logo-nav">
                         <img src={img101} className="img-logo-nav"/>
                     </div>
-                    <li className={styleActiveA + " list list-pad"}>
+                    <li className={styleActiveX + " list list-pad"}>
+                        <a href="#" onClick={changeStyleActiveX}>
+                            <span className="icon"><ion-icon name="layers-outline"></ion-icon></span>
+                            <span className="title">Principal</span>
+                        </a>
+                    </li>
+                    <li className={styleActiveA + " list"}>
                         <a href="#" onClick={changeStyleActiveA}>
                             <span className="icon"><ion-icon name="cube-outline"></ion-icon></span>
                             <span className="title">Productos</span>
@@ -220,6 +264,11 @@ function Principal() {
                         </a>
                     </li>
                 </ul>
+            </div>
+
+            <div className={styleviewX}>
+                <Productos/>
+                <Almacen/>
             </div>
 
             <div className={styleviewA}>

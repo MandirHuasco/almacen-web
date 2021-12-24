@@ -453,7 +453,7 @@ function Productos() {
                                 <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
-                        <div className="cont-search">
+                        <div className={stylex + " cont-search"}>
                             <input className="form-control inputBuscar" placeholder="Búscar..."/>
                             <button className="btn bg-almacen color-white">
                                 <FontAwesomeIcon icon={faSearch}/>
