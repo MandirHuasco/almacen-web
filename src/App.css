@@ -697,7 +697,7 @@ input:checked.check-form-almacen:after {
 }
 .cont-prin{
   width: 95%;
-  margin: 40px auto;
+  margin: 40px auto 0;
 }
 .header-prod-prin{
   width: 100%;
@@ -1195,9 +1195,34 @@ label{
 }
 .mode-oscuro{
   background: #000 !important;
+  transition: .4s;
 }
 .mode-oscuro-letra{
   color: #fff !important;
+  transition: .4s;
+}
+.mode-claro{
+  background: #fff !important;
+  transition: .4s;
+}
+.mode-claro-letra{
+  color: #000 !important;
+  transition: .4s;
+}
+.div-oscuro-on{
+  display: flex !important;
+}
+.mode-oscure-cards{
+  background: #000 !important;
+}
+.text-aling-center{
+  text-align: center !important;
+}
+.select-almacenes{
+  width: calc(100% - 123.09px);
+}
+.button-inactive-alm{
+  background: #f00 !important;
 }
 
 /*-----FIN ALMACEN------*/

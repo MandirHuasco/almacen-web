@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import imgFileAlmacen from '../img/file-img-almacen.png';
 import TableProductos from "./TableProd";
+import TableAlmacen from "./TableAlm";
 
 function AlmacenPrin() {
 
@@ -71,7 +72,7 @@ function AlmacenPrin() {
 
                                     <Modal isOpen={modal_105} toggle={toggle_105}>
                                         <ModalHeader toggle={toggle_105}>
-                                            <p className="p-modal p-modal-prod">EDITAR <span className="span-modal span-modal-prod">CATEGORIA</span>.</p>
+                                            <p className="p-modal p-modal-prod">EDITAR <span className="span-modal span-modal-prod">ALMACEN</span>.</p>
                                             <div className="img-cat-modal">
                                                 <img src={imgFileAlmacen} className="img-cat-file" alt=""/>
                                             </div>
@@ -81,12 +82,12 @@ function AlmacenPrin() {
                                                 <div className="cont-form-modal">
                                                     <div className="cont-form-modal-cat">
                                                         <div className="form-group">
-                                                            <label htmlFor="cat-name">Ingrese categoría</label>
+                                                            <label htmlFor="cat-name">Ingrese almacen</label>
                                                             <div className="input-group mb-3">
                                                                 <div className="input-group-prepend">
-                                                                    <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="cube-outline"></ion-icon></span>Descripción</span>
+                                                                    <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="grid-outline"></ion-icon></span>Descripción</span>
                                                                 </div>
-                                                                <input type="text" id="cat-name" className="form-control" placeholder="Nombre categoría" aria-label="Username" aria-describedby="basic-addon1"/>
+                                                                <input type="text" id="cat-name" className="form-control" placeholder="Nombre almacen" aria-label="Username" aria-describedby="basic-addon1"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -122,7 +123,7 @@ function AlmacenPrin() {
                 <div className={styleCat + " table-cat"}>
                     <div className="caja-cont-cat-head margin-bottom-20">
                         <div className="title-cat">
-                            <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="folder-open-outline"></ion-icon></span>CATEGORIA_<span className="span-cat">MUEBLES</span></h2>
+                            <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="folder-open-outline"></ion-icon></span>ALMACEN_<span className="span-cat">ATTE</span></h2>
                         </div>
                         <div className="button-cat">
                             <div className="cerrar-caja-cat">
@@ -130,7 +131,7 @@ function AlmacenPrin() {
                             </div>
                         </div>
                     </div>
-                    <TableProductos/>
+                    <TableAlmacen/>
                 </div>
             </div>
         </div>

@@ -41,6 +41,13 @@ function Productos() {
 
     const [stylex, setStylex] = useState("table-off");
 
+    const [oscuro, setOscuro] = useState("");
+    const [oscuroFont, setOscuroFont] = useState("");
+    const [oscuroButton, setOscuroButton] = useState("");
+    const [oscuroButtonOn, setOscuroButtonOn] = useState("div-off");
+
+    const [oscuroCardsFont, setOscuroCardsFont] = useState("");
+
     const changeStyleA = () => {
         console.log("menu-action-A");
 
@@ -141,6 +148,25 @@ function Productos() {
         setStylex("table-off");
     };
 
+    const ModoOScuro = () => {
+        console.log("menu-action-X");
+
+        setOscuro("mode-oscuro");
+        setOscuroFont("mode-oscuro-letra")
+        setOscuroButton("div-off")
+        setOscuroButtonOn("div-oscuro-on")
+        setOscuroCardsFont("mode-claro-letra")
+    };
+
+    const ModoClaro = () => {
+        console.log("menu-action-X");
+
+        setOscuro("mode-claro");
+        setOscuroFont("mode-claro-letra")
+        setOscuroButton("div-oscuro-on")
+        setOscuroButtonOn("div-off")
+    };
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [modal_101, setModal_101] = useState(false);
     const toggle_101 = () => setModal_101(!modal_101);
@@ -148,7 +174,7 @@ function Productos() {
     return(
         <div className="cont-prod-prin">
             <div className="cont-prin">
-                <div className="header-prod-prin">
+                <div className={oscuro + " header-prod-prin " + oscuroFont}>
                     <div className="title-head-prod">
                         <h2 className="title-prod"><span className="icon icon-prod"><ion-icon name="cube-outline"></ion-icon></span>PRODUCTOS</h2>
                     </div>
@@ -425,11 +451,12 @@ function Productos() {
                             </ModalFooter>
                         </Modal>
 
-                        <button type="button" className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
+                        <button type="button" onClick={ModoOScuro} className={oscuroButton + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
+                        <button type="button" onClick={ModoClaro} className={oscuroButtonOn + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="sunny-outline"></ion-icon></span>Modo Claro</button>
                     </div>
                 </div>
 
-                <div className={style + " body-prod-prin"}>
+                <div className={style + " body-prod-prin " + oscuro + " " + oscuroFont}>
                     <nav className="nav-cont">
                         <div className="icon-nav">
                                 <span className="icon icon-prod-nav-prin">
@@ -461,16 +488,16 @@ function Productos() {
                         </div>
                     </nav>
 
-                    <div id="item-table-01" className={stylea}>
+                    <div id="item-table-01" className={stylea + " " + oscuroCardsFont}>
                         <TableProductos/>
                     </div>
-                    <div id="item-table-01" className={styleb}>
+                    <div id="item-table-01" className={styleb  + " " + oscuroCardsFont}>
                         <TableProductosActive/>
                     </div>
-                    <div id="item-table-02" className={stylec}>
+                    <div id="item-table-02" className={stylec  + " " + oscuroCardsFont}>
                         <TableProductosCatPrin/>
                     </div>
-                    <div id="item-table-03" className={styled}>
+                    <div id="item-table-03" className={styled  + " " + oscuroCardsFont}>
                         <TableProductosInactivos/>
                     </div>
 
