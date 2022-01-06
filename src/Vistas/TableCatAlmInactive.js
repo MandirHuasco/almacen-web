@@ -1,9 +1,9 @@
 import React, {useState} from "react";
+import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from '@material-ui/core';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from "qrcode";
-import {Button, Card, CardContent, Container, Grid, makeStyles, TextField} from "@material-ui/core";
 
-function TableProductosInactivos() {
+function TableProductosCatAlmInactive() {
 
     const [text, setText] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -19,19 +19,22 @@ function TableProductosInactivos() {
         }
     }
 
-
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [modal_205, setModal_205] = useState(false);
-    const toggle_205 = () => setModal_205(!modal_205);
+    const [modal_203, setModal_203] = useState(false);
+    const toggle_203 = () => setModal_203(!modal_203);
+
+    const [modal_210, setModal_210] = useState(false);
+    const toggle_210 = () => setModal_210(!modal_210);
 
     return(
         <div className="scrolling-wrapper">
             <div className="cont-table-prod">
                 <table className="table-cont-prod">
                     <thead>
-                    <tr className="tr-head-prod-inactivo">
+                    <tr className="tr-head-prod">
+                        <th className="td-head-prod text-aling-center"><span className="icon"><ion-icon name="repeat-outline"></ion-icon></span></th>
                         <th className="td-head-prod text-aling-center"><span className="icon"><ion-icon name="create-outline"></ion-icon></span></th>
-                        <th className="td-head-prod text-aling-center"><span className="icon"><ion-icon name="cloud-upload-outline"></ion-icon></span></th>
+                        <th className="td-head-prod text-aling-center"><span className="icon"><ion-icon name="cloud-offline-outline"></ion-icon></span></th>
                         <th className="td-head-prod">Item</th>
                         <th className="td-head-prod">Cod-Barra</th>
                         <th className="td-head-prod">Cod-QR</th>
@@ -60,10 +63,13 @@ function TableProductosInactivos() {
                     <tbody>
                     <tr className="tr-body-prod">
                         <td className="td-body-prod">
-                            <button type="button" onClick={() => toggle_205()} className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="create-outline"></ion-icon></span>Editar</button>
+                            <button type="button" onClick={() => toggle_210()} className="btn btn-color-principal button-active-alm"><span className="icon-boton"><ion-icon name="repeat-outline"></ion-icon></span>Transferencia</button>
                         </td>
                         <td className="td-body-prod">
-                            <button type="button" className="btn btn-color-principal button-active-alm"><span className="icon-boton"><ion-icon name="cloud-upload-outline"></ion-icon></span>Habilitar</button>
+                            <button type="button" onClick={() => toggle_203()} className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="create-outline"></ion-icon></span>Editar</button>
+                        </td>
+                        <td className="td-body-prod">
+                            <button type="button" className="btn btn-color-principal button-inactive-alm"><span className="icon-boton"><ion-icon name="cloud-offline-outline"></ion-icon></span>Deshabilitar</button>
                         </td>
                         <td className="td-body-prod">Item</td>
                         <td className="td-body-prod">Item</td>
@@ -89,12 +95,119 @@ function TableProductosInactivos() {
                         <td className="td-body-prod">Item</td>
                         <td className="td-body-prod">Item</td>
                     </tr>
-
+                    <tr className="tr-body-prod">
+                        <td className="td-body-prod">
+                            <button type="button" onClick={() => toggle_210()} className="btn btn-color-principal button-active-alm"><span className="icon-boton"><ion-icon name="repeat-outline"></ion-icon></span>Transferencia</button>
+                        </td>
+                        <td className="td-body-prod">
+                            <button type="button" onClick={() => toggle_203()} className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="create-outline"></ion-icon></span>Editar</button>
+                        </td>
+                        <td className="td-body-prod">
+                            <button type="button" className="btn btn-color-principal button-inactive-alm"><span className="icon-boton"><ion-icon name="cloud-offline-outline"></ion-icon></span>Deshabilitar</button>
+                        </td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                    </tr>
+                    <tr className="tr-body-prod">
+                        <td className="td-body-prod">
+                            <button type="button" onClick={() => toggle_210()} className="btn btn-color-principal button-active-alm"><span className="icon-boton"><ion-icon name="repeat-outline"></ion-icon></span>Transferencia</button>
+                        </td>
+                        <td className="td-body-prod">
+                            <button type="button" onClick={() => toggle_203()} className="btn btn-color-principal"><span className="icon-boton"><ion-icon name="create-outline"></ion-icon></span>Editar</button>
+                        </td>
+                        <td className="td-body-prod">
+                            <button type="button" className="btn btn-color-principal button-inactive-alm"><span className="icon-boton"><ion-icon name="cloud-offline-outline"></ion-icon></span>Deshabilitar</button>
+                        </td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                        <td className="td-body-prod">Item</td>
+                    </tr>
                     </tbody>
                 </table>
 
-                <Modal isOpen={modal_205} toggle={toggle_205} className="prod-modal">
-                    <ModalHeader toggle={toggle_205}>
+                <Modal isOpen={modal_210} toggle={toggle_210}>
+                    <ModalHeader toggle={toggle_210}>
+                        <p className="p-modal p-modal-prod">REALIZAR <span className="span-modal span-modal-prod">TRANSFERENCIA</span>.</p>
+                    </ModalHeader>
+                    <ModalBody>
+                        <form action="">
+                            <div className="cont-form-modal">
+                                <div className="cont-form-modal-alm">
+                                    <div className="form-group">
+                                        <label htmlFor="prod-name">Seleccione almacen</label>
+                                        <div className="input-group mb-3">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="grid-outline"></ion-icon></span>Almacenes</span>
+                                            </div>
+                                            <select name="almacenes" id="Almacenes" className="select-almacenes">
+                                                <option value="volvo">Almacen_01</option>
+                                                <option value="saab">Almacen_02</option>
+                                                <option value="opel">Almacen_03</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-group">
+                                            {/*<label htmlFor="prod-marca">Marca</label>*/}
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="accessibility-outline"></ion-icon></span>Responsable</span>
+                                                </div>
+                                                <input type="text" id="prod-marca" className="form-control" placeholder="Apellidos, Nombres..." aria-label="Username" aria-describedby="basic-addon1"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" className="btn btn-color-principal btn-modal-prod"><span className="icon-boton"><ion-icon name="save-outline"></ion-icon></span> GUARDAR</button>
+                                </div>
+                            </div>
+                        </form>
+                    </ModalBody>
+                    <ModalFooter>
+                        <p className="p-modal p-modal-footer"><span className="span-modal span-footer">Desarrollado por N&W Seguridad Total</span></p>
+                    </ModalFooter>
+                </Modal>
+
+                <Modal isOpen={modal_203} toggle={toggle_203} className="prod-modal">
+                    <ModalHeader toggle={toggle_203}>
                         <p className="p-modal p-modal-prod">EDITAR <span className="span-modal span-modal-prod">PRODUCTO</span>.</p>
                     </ModalHeader>
                     <ModalBody>
@@ -104,7 +217,7 @@ function TableProductosInactivos() {
                                     <div className="form-group">
                                         <label htmlFor="prod-name">Ingrese producto</label>
                                         <div className="input-group mb-3">
-                                            <div className="i   nput-group-prepend">
+                                            <div className="input-group-prepend">
                                                 <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="cube-outline"></ion-icon></span>Descripción</span>
                                             </div>
                                             <input type="text" id="prod-name" className="form-control" placeholder="Nombre producto" aria-label="Username" aria-describedby="basic-addon1"/>
@@ -395,4 +508,4 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 20
     }
 }));
-export default TableProductosInactivos;
+export default TableProductosCatAlmInactive;

@@ -147,6 +147,15 @@ function TableAlmacen() {
                                                 <option value="opel">Almacen_03</option>
                                             </select>
                                         </div>
+                                        <div className="form-group">
+                                            {/*<label htmlFor="prod-marca">Marca</label>*/}
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="accessibility-outline"></ion-icon></span>Responsable</span>
+                                                </div>
+                                                <input type="text" id="prod-marca" className="form-control" placeholder="Apellidos, Nombres..." aria-label="Username" aria-describedby="basic-addon1"/>
+                                            </div>
+                                        </div>
                                     </div>
                                     <button type="button" className="btn btn-color-principal btn-modal-prod"><span className="icon-boton"><ion-icon name="save-outline"></ion-icon></span> GUARDAR</button>
                                 </div>

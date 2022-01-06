@@ -491,6 +491,7 @@ input:checked.check-form:after{
 }
 .cont-body-login-almacen{
   width: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -499,10 +500,10 @@ input:checked.check-form:after{
 .img-login-almacen{
   width: 80%;
   padding: 20px;
-  filter: drop-shadow(4px 8px 12px black);
+  filter: grayscale(1);
 }
 .img-login-icon{
-  width: 400px;
+  width: 200px;
   margin: auto;
   filter: drop-shadow(2px 4px 6px black);
 }
@@ -827,7 +828,7 @@ label{
   width: 100%;
   max-width: 2200px;
   margin: 20px auto;
-  padding: 0;
+  padding: 0 10px;
   align-items: center;
   background: #fff;
   border-radius: 20px;
@@ -984,7 +985,7 @@ label{
   flex-wrap: wrap;
 }
 .caja-cont-cat{
-  width: 22%;
+  width: 32.33333333333333%;
   background: #fff;
   padding: 10px;
   margin: 1.5%;
@@ -1016,7 +1017,7 @@ label{
   display: block;
 }
 .img-cat{
-  width: 50%;
+  width: 60%;
   display: inline-flex;
 }
 .block-cont-cat{
@@ -1224,6 +1225,23 @@ label{
 .button-inactive-alm{
   background: #f00 !important;
 }
+.button-active-alm{
+  background: #319027 !important;
+}
+.caja-cont-alm-head{
+  width: 100%;
+  display: inline-flex;
+  background: #fff;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px;
+}
+.nav-ul-desplegable-off{
+  display: none;
+}
+.menu-desplegar{
+  display: none;
+}
 
 /*-----FIN ALMACEN------*/
 @keyframes App-logo-spin {
@@ -1248,6 +1266,44 @@ label{
   }
   .input-form-almacen{
     width: 100%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .cont-form-sub{
+    width: 100%;
+  }
+  .input-form{
+    width: 100%;
+  }
+  .input-form-almacen{
+    width: 100%;
+  }
+  .img-cat{
+    width: 80%;
+  }
+  .nav-ul-desplegable-on{
+    display: none;
+  }
+  .menu-desplegar{
+    display: initial !important;
+  }
+  .nav-ul-desplegable-off{
+    display: block;
+    position: absolute;
+    padding-left: 0;
+    left: 250px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #aebfff;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  .nav-li a{
+    width: 100%;
+  }
+  .caja-cont-cat{
+    width: 44%;
   }
 }
 @media only screen and (max-width: 930px) {

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import img001 from './img/Login-Almacen.png';
+import img001 from './img/Login-Almacen-2.png';
 import img002 from './img/almacen-img-01.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faFileExcel } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +32,7 @@ function App() {
 
               <div className="cont-form cont-form-almacen">
                   <div className="mini-logo-01 img-login-icon">
-                      <img src={img001} className="img-mini-logo-01 login-almacen-icon"/>
+                      <img src={img001} className="img-mini-logo-01"/>
                   </div>
                   <div className="cont-form-sub">
                       <form action="/Principal">

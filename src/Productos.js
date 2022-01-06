@@ -109,7 +109,7 @@ function Productos() {
     };
 
     const changeStyleD = () => {
-        console.log("menu-action-C");
+        console.log("menu-action-D");
 
         setStyle("pading-card-active");
 
@@ -171,8 +171,149 @@ function Productos() {
     const [modal_101, setModal_101] = useState(false);
     const toggle_101 = () => setModal_101(!modal_101);
 
+    const [styleMenu, setStyleMenu] = useState("div-off");
+    const [styleMenuButton, setStyleMenuButton] = useState("div-on-flex");
+
+    const changeStyleMenu = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-on-flex");
+        setStyleMenuButton("div-off");
+    };
+
+    const changeStyleMenux = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleMenuxA = () => {
+        console.log("menu-action-A-menu");
+
+        setStyle("pading-card-active");
+
+        setStyleA("nav-border-bottom-active");
+        setStylea("table-on");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStyleD("");
+        setStyled("table-off");
+
+        setStylex("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleMenuxB = () => {
+        console.log("menu-action-B-menu");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("nav-border-bottom-active");
+        setStyleb("table-on");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStyleD("");
+        setStyled("table-off");
+
+        setStylex("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleMenuxC = () => {
+        console.log("menu-action-C-menu");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("nav-border-bottom-active");
+        setStylec("table-on");
+
+        setStyleD("");
+        setStyled("table-off");
+
+        setStylex("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleMenuxD = () => {
+        console.log("menu-action-D-menu");
+
+        setStyle("pading-card-active");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStyleD("nav-border-bottom-active");
+        setStyled("table-on");
+
+        setStylex("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleXMenu = () => {
+        console.log("menu-action-X");
+
+        setStyle("");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("");
+        setStyleb("table-off");
+
+        setStyleC("");
+        setStylec("table-off");
+
+        setStyleD("");
+        setStyled("table-off");
+
+        setStylex("table-off");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleMenuDivx = () => {
+        console.log("action-options");
+
+        if(styleMenu === 'div-on-flex'){
+            setStyleMenu("div-off");
+            setStyleMenuButton("div-on-flex");
+        }
+    };
+
     return(
-        <div className="cont-prod-prin">
+        <div className="cont-prod-prin" onClick={changeStyleMenuDivx}>
             <div className="cont-prin">
                 <div className={oscuro + " header-prod-prin " + oscuroFont}>
                     <div className="title-head-prod">
@@ -463,7 +604,15 @@ function Productos() {
                                     <ion-icon name="git-merge-outline"></ion-icon>
                                 </span><h3 className="h3-nav-icon">TABLAS</h3>
                         </div>
-                        <ul className="nav-ul">
+                        <div className="menu-desplegar">
+                            <ul className="nav-ul">
+                                <li className="nav-li">
+                                    <a className={styleMenuButton + " nav-link"} href="#" onClick={changeStyleMenu}><span className="icon icon-prod-nav"><ion-icon name="ellipsis-vertical-outline"></ion-icon></span>Menú</a>
+                                    <a className={styleMenu + " nav-link"} href="#" onClick={changeStyleMenux}><span className="icon icon-prod-nav"><ion-icon name="ellipsis-vertical-outline"></ion-icon></span>Menú</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul className="nav-ul nav-ul-desplegable nav-ul-desplegable-on">
                             <li className="nav-li">
                                 <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
                             </li>
@@ -478,6 +627,23 @@ function Productos() {
                             </li>
                             <li className={stylex + " nav-li"}>
                                 <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
+                            </li>
+                        </ul>
+                        <ul className={styleMenu + " nav-ul nav-ul-desplegable-off"}>
+                            <li className="nav-li nav-li-desplegable">
+                                <a className={styleA + " nav-link"} href="#" onClick={changeStyleMenuxA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
+                            </li>
+                            <li className="nav-li">
+                                <a className={styleB + " nav-link"} href="#" onClick={changeStyleMenuxB}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                            </li>
+                            <li className="nav-li">
+                                <a className={styleC + " nav-link"} href="#" onClick={changeStyleMenuxC}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                            </li>
+                            <li className="nav-li">
+                                <a className={styleD + " nav-link"} href="#" onClick={changeStyleMenuxD}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                            </li>
+                            <li className={stylex + " nav-li"}>
+                                <a className=" nav-link" href="#" onClick={changeStyleXMenu}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
                         <div className={stylex + " cont-search"}>

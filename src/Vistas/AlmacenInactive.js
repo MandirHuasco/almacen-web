@@ -2,6 +2,12 @@ import React, {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import imgFileAlmacenInactive from '../img/file-img-almacen-inactive.png';
 import TableAlmInactive from "./TableAlmInactive";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import imgFile from "../img/file-img.png";
+import TableProductosCatAlm from "./TableCatAlm";
+import TableAlmacen from "./TableAlm";
+import TableProductosCatAlmInactive from "./TableCatAlmInactive";
 
 function AlmacenInactive() {
 
@@ -10,6 +16,9 @@ function AlmacenInactive() {
 
     const [styleCat, setStyleCat] = useState("table-off");
     const [styleCatSecond, setStyleCatSecond] = useState("");
+
+    const [styleAlm, setStyleAlm] = useState("table-off");
+    const [styleAlmSecond, setStyleAlmSecond] = useState("");
 
     const [styleOptions, setStyleOptions] = useState("div-off");
     const [styleOptionsButton, setStyleOptionsButton] = useState("div-on");
@@ -51,10 +60,50 @@ function AlmacenInactive() {
         }
     };
 
+    const changeStyleAlm = () => {
+        console.log("action-cat-table");
+
+        setStyleAlm("table-on");
+        setStyleAlmSecond("div-off");
+    };
+
+    const changeStyleAlmx = () => {
+        console.log("action-cat-cerrar");
+
+        setStyleAlm("table-off");
+        setStyleAlmSecond("div-on-contents");
+    };
+
+    const [stylea, setStylea] = useState("table-on");
+    const [styleA, setStyleA] = useState("nav-border-bottom-active");
+
+    const [styleb, setStyleb] = useState("table-off");
+    const [styleB, setStyleB] = useState("");
+
+    const changeStyleA = () => {
+        console.log("menu-action-A");
+
+        setStyleA("nav-border-bottom-active");
+        setStylea("table-on");
+
+        setStyleB("");
+        setStyleb("table-off");
+    };
+
+    const changeStyleB = () => {
+        console.log("menu-action-B");
+
+        setStyleA("");
+        setStylea("table-off");
+
+        setStyleB("nav-border-bottom-active");
+        setStyleb("table-on");
+    };
+
     return(
         <div className="cont-prod-cat-prin cont-prod-cat-prin-inactive" id="id-almacen" onClick={changeStyleOptionsDivx}>
             <div className="cont-fila-cat">
-                <div className={styleCatSecond + " display-contents"}>
+                <div className={styleAlmSecond + " display-contents"}>
                     <div className="caja-cont-cat caja-cont-cat-alm">
                         <div className="title-cat title-cat-box">
                             <div className="title-cat-box-flex">
@@ -88,6 +137,15 @@ function AlmacenInactive() {
                                                                 </div>
                                                                 <input type="text" id="cat-name" className="form-control" placeholder="Nombre almacen" aria-label="Username" aria-describedby="basic-addon1"/>
                                                             </div>
+                                                            <div className="form-group">
+                                                                {/*<label htmlFor="prod-marca">Marca</label>*/}
+                                                                <div className="input-group mb-3">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text bg-form" id="basic-addon1"><span className="icon-boton"><ion-icon name="scan-outline"></ion-icon></span>Dirección</span>
+                                                                    </div>
+                                                                    <input type="text" id="prod-marca" className="form-control" placeholder="Av,jr,pje..." aria-label="Username" aria-describedby="basic-addon1"/>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="div-buton-modal div-buton-modal-cat">
@@ -105,7 +163,7 @@ function AlmacenInactive() {
                                 </ul>
                             </div>
                         </div>
-                        <a href="#" onClick={changeStyleCat} className="display-contents-cat">
+                        <a href="#" onClick={changeStyleAlm} className="display-contents-cat">
                             <div className="body-cat">
                                 <div className="img-cat">
                                     <img src={imgFileAlmacenInactive} className="img-cat-file"/>
@@ -119,18 +177,85 @@ function AlmacenInactive() {
                         </a>
                     </div>
                 </div>
-                <div className={styleCat + " table-cat"}>
-                    <div className="caja-cont-cat-head margin-bottom-20">
+                <div className={styleAlm + " table-cat"}>
+                    <div className="caja-cont-alm-head">
                         <div className="title-cat">
                             <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="folder-open-outline"></ion-icon></span>ALMACEN_<span className="span-cat">ATTE_02</span></h2>
                         </div>
                         <div className="button-cat">
                             <div className="cerrar-caja-cat">
-                                <a className="nav-link-cat" onClick={changeStyleCatx} href="#"><span className="icon icon-prod-nav"><ion-icon name="close-outline" role="img" className="md hydrated" aria-label="close outline"></ion-icon></span>Cerrar</a>
+                                <a className="nav-link-cat" onClick={changeStyleAlmx} href="#"><span className="icon icon-prod-nav"><ion-icon name="close-outline" role="img" className="md hydrated" aria-label="close outline"></ion-icon></span>Cerrar</a>
                             </div>
                         </div>
                     </div>
-                    <TableAlmInactive/>
+
+                    <div className="body-prod-prin">
+                        <nav className="nav-cont">
+                            <div className="icon-nav">
+                                <span className="icon icon-prod-nav-prin">
+                                    <ion-icon name="git-merge-outline"></ion-icon>
+                                </span><h3 className="h3-nav-icon">FILTRO</h3>
+                            </div>
+                            <ul className="nav-ul">
+                                <li className="nav-li">
+                                    <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
+                                </li>
+                                <li className="nav-li">
+                                    <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                                </li>
+                            </ul>
+                            <div className="cont-search">
+                                <input className="form-control inputBuscar" placeholder="Búscar..."/>
+                                <button className="btn bg-almacen color-white">
+                                    <FontAwesomeIcon icon={faSearch}/>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div id="item-table-01" className={styleb}>
+                        <div className="cont-fila-cat">
+                            <div className={styleCatSecond + " display-contents"}>
+                                <div className="caja-cont-cat">
+                                    <div className="title-cat title-cat-box">
+                                        <div className="title-cat-box-flex">
+                                            <span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01
+                                        </div>
+                                    </div>
+                                    <a href="#" onClick={changeStyleCat} className="display-contents-cat">
+                                        <div className="body-cat">
+                                            <div className="img-cat">
+                                                <img src={imgFile} className="img-cat-file"/>
+                                            </div>
+                                            <div className="block-cont-cat">
+                                                <div className="info-cat">
+                                                    <p className="p-info-cat"><span className="span-info-cat">Cantidad</span> 12</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className={styleCat + " table-cat"}>
+                                <div className="caja-cont-cat-head margin-bottom-20">
+                                    <div className="title-cat">
+                                        <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="folder-open-outline"></ion-icon></span>CATEGORIA_<span className="span-cat">MUEBLES</span></h2>
+                                    </div>
+                                    <div className="button-cat">
+                                        <div className="cerrar-caja-cat">
+                                            <a className="nav-link-cat" onClick={changeStyleCatx} href="#"><span className="icon icon-prod-nav"><ion-icon name="close-outline" role="img" className="md hydrated" aria-label="close outline"></ion-icon></span>Cerrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <TableProductosCatAlmInactive/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="item-table-01" className={stylea}>
+                        <TableAlmInactive/>
+                    </div>
+
                 </div>
             </div>
         </div>
