@@ -5,8 +5,6 @@ import QRCode from 'qrcode'
 import TableProductos from "./Vistas/TableProd";
 import TableProductosCatPrin from "./Vistas/TableCatPrin";
 import TableProductosInactivos from "./Vistas/TableProdInactive";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import TableProductosActive from "./Vistas/TableProdActive";
 
 function Productos() {
@@ -555,7 +553,7 @@ function Productos() {
                                                                 <Grid container spacing={2}>
                                                                     <div className="cont-qr-flex">
                                                                         <div className="cont-qr-flex-left">
-                                                                            <TextField label="Nombre de Producto" onChange={(e) => setText(e.target.value)}/>
+                                                                            <TextField label="Producto" onChange={(e) => setText(e.target.value)}/>
                                                                             <Button className={classes.btn} variant="contained" color="primary" onClick={() => generateQrCode()}>Generate</Button>
                                                                             {imageUrl ? (
                                                                                 <a href={imageUrl} className="img-qr" download>
@@ -592,8 +590,8 @@ function Productos() {
                             </ModalFooter>
                         </Modal>
 
-                        <button type="button" onClick={ModoOScuro} className={oscuroButton + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
-                        <button type="button" onClick={ModoClaro} className={oscuroButtonOn + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="sunny-outline"></ion-icon></span>Modo Claro</button>
+                        <button type="button" onClick={ModoOScuro} className={oscuroButton + " btn btn-color-principal btn-disabled"}><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
+                        <button type="button" onClick={ModoClaro} className={oscuroButtonOn + " btn btn-color-principal btn-disabled"}><span className="icon-boton"><ion-icon name="sunny-outline"></ion-icon></span>Modo Claro</button>
                     </div>
                 </div>
 
@@ -629,30 +627,25 @@ function Productos() {
                                 <a className=" nav-link" href="#" onClick={changeStyleX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
-                        <ul className={styleMenu + " nav-ul nav-ul-desplegable-off"}>
-                            <li className="nav-li nav-li-desplegable">
-                                <a className={styleA + " nav-link"} href="#" onClick={changeStyleMenuxA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
-                            </li>
-                            <li className="nav-li">
-                                <a className={styleB + " nav-link"} href="#" onClick={changeStyleMenuxB}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
-                            </li>
-                            <li className="nav-li">
-                                <a className={styleC + " nav-link"} href="#" onClick={changeStyleMenuxC}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
-                            </li>
-                            <li className="nav-li">
-                                <a className={styleD + " nav-link"} href="#" onClick={changeStyleMenuxD}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
-                            </li>
-                            <li className={stylex + " nav-li"}>
-                                <a className=" nav-link" href="#" onClick={changeStyleXMenu}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
-                            </li>
-                        </ul>
-                        <div className={stylex + " cont-search"}>
-                            <input className="form-control inputBuscar" placeholder="Búscar..."/>
-                            <button className="btn bg-almacen color-white">
-                                <FontAwesomeIcon icon={faSearch}/>
-                            </button>
-                        </div>
                     </nav>
+
+                    <ul className={styleMenu + " nav-ul nav-ul-desplegable-off"}>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleA + " nav-link"} href="#" onClick={changeStyleMenuxA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Todos</a>
+                        </li>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleB + " nav-link"} href="#" onClick={changeStyleMenuxB}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                        </li>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleC + " nav-link"} href="#" onClick={changeStyleMenuxC}><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>Categorias</a>
+                        </li>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleD + " nav-link"} href="#" onClick={changeStyleMenuxD}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                        </li>
+                        <li className={stylex + " nav-li nav-li-desplegable"}>
+                            <a className=" nav-link" href="#" onClick={changeStyleXMenu}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
+                        </li>
+                    </ul>
 
                     <div id="item-table-01" className={stylea + " " + oscuroCardsFont}>
                         <TableProductos/>

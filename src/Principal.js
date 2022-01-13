@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import img101 from './img/logo-empresa-almacen.png';
 import Productos from "./Productos";
 import Almacen from "./Almacen";
+import StoreDatos from "./function/Store";
+import {observer} from "mobx-react";
 
 function Principal() {
 
@@ -178,6 +180,8 @@ function Principal() {
         setStyleActiveF("");
         setStyleActiveG("active");
         setStyleActiveX("");
+
+        window.location.reload();
     };
 
     const changeStyleActiveX = () => {
@@ -258,7 +262,7 @@ function Principal() {
                         </a>
                     </li>
                     <li className={styleActiveG + " list Sign-off"}>
-                        <a href="/" onClick={changeStyleActiveG}>
+                        <a href="#" onClick={changeStyleActiveG}>
                             <span className="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                             <span className="title">Salir</span>
                         </a>
@@ -300,4 +304,4 @@ function Principal() {
 }
 
 
-export default Principal;
+export default observer(Principal);

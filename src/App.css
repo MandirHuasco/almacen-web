@@ -1,4 +1,10 @@
 body{
+  /*background: #11225f !important;*/
+  background-image: url("img/stock-background-black.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.body-bg{
   background: #11225f !important;
 }
 .App-prin {
@@ -12,7 +18,7 @@ body{
   position: absolute;
   height: 100vh;
   width: 100%;
-  background-image: url("img/img-001.jpg");
+  background-image: url("img/img-003.jpg");
   background-size: cover;
   background-attachment: fixed;
   filter: brightness(0.5);
@@ -678,7 +684,7 @@ input:checked.check-form-almacen:after {
 }
 .ul-menu{
   height: 100vh;
-  min-height: 500px;
+  min-height: 780px;
 }
 .Sign-off{
   position: absolute !important;
@@ -698,6 +704,7 @@ input:checked.check-form-almacen:after {
 }
 .cont-prin{
   width: 95%;
+  min-width: 280px;
   margin: 40px auto 0;
 }
 .header-prod-prin{
@@ -1238,8 +1245,15 @@ label{
 }
 .nav-ul-desplegable-off{
   display: none;
+  margin-bottom: 10px;
 }
 .menu-desplegar{
+  display: none;
+}
+.margin-top-bottom-10{
+  margin: 10px 0;
+}
+.h3-nav-icon-off{
   display: none;
 }
 
@@ -1267,6 +1281,15 @@ label{
   .input-form-almacen{
     width: 100%;
   }
+  .cont-form-modal-prod{
+    width: 100%;
+  }
+  .input-code{
+    width: 100%;
+  }
+  .cont-qr-flex-right{
+    display: flex;
+  }
 }
 @media only screen and (max-width: 1100px) {
   .cont-form-sub{
@@ -1288,10 +1311,9 @@ label{
     display: initial !important;
   }
   .nav-ul-desplegable-off{
-    display: block;
-    position: absolute;
+    display: inline-block;
+    width: 100%;
     padding-left: 0;
-    left: 250px;
     justify-content: center;
     align-items: center;
     background: #fff;
@@ -1299,11 +1321,35 @@ label{
     border-radius: 10px;
     z-index: 10;
   }
+  .nav-ul-desplegable-off-alm{
+    left: 350px;
+  }
   .nav-li a{
     width: 100%;
+    padding: 10px;
+  }
+  .nav-li-desplegable a{
+    border-bottom: none;
   }
   .caja-cont-cat{
     width: 44%;
+  }
+  .nav-ul-off-cat{
+    display: none;
+  }
+  .nav-border-bottom-active{
+    border-bottom: 3px solid #000 !important;
+    background-color: #11225f !important;
+    color: #fff !important;
+  }
+  .h3-nav-icon-cat{
+    display: none;
+  }
+  .h3-nav-icon-off{
+    display: inline-flex;
+  }
+  .padding-10{
+    padding: 10px;
   }
 }
 @media only screen and (max-width: 930px) {
@@ -1361,6 +1407,10 @@ label{
   .caja-cont{
     width: 150px;
   }
+  .img-mini-logo-01{
+    width: 80%;
+  }
+
   /*------ALMACEN------*/
   .cont-body-login-almacen{
     display: block;
@@ -1376,7 +1426,56 @@ label{
     width: 400px;
   }
 }
+@media only screen and (max-width: 700px) {
+  .cont-prod-prin{
+    font-size: .8rem;
+  }
+  .title-head-prod{
+    padding: 0;
+  }
+  .title-prod{
+    letter-spacing: 2px;
+    font-size: .8rem;
+  }
+  .btn{
+    font-size: .8rem !important;
+  }
+  .btn-disabled{
+    display: none !important;
+  }
+  .qr-cont{
+    padding: 20px 0;
+  }
+  .icon-prod-nav-prin{
+    font-size: .8rem;
+  }
+  .h3-nav-icon{
+    font-size: .8rem;
+  }
+  .nav-li a{
+    font-size: .8rem;
+  }
+  .icon-prod-nav{
+    font-size: .8rem;
+  }
+  .nav-ul-desplegable-off{
+    left: 230px;
+  }
+  .h2-cat{
+    font-size: .8rem;
+  }
+  .span-cat{
+    font-size: .8rem;
+  }
+  .caja-cont-cat{
+    width: 97%;
+  }
+}
 @media only screen and (max-width: 500px) {
+  .cont-prin{
+    margin: 20px auto;
+    padding: 0 2.5%;
+  }
   .fecha-ticket{
     font-size: 14px;
     letter-spacing: 2px;
@@ -1410,16 +1509,16 @@ label{
     width: 50%;
   }
   .email-form{
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .pass-form{
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .email-form::placeholder{
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .pass-form::placeholder{
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .label-check{
     font-size: .8rem;
@@ -1480,6 +1579,37 @@ label{
   }
   .caja{
     padding: 0;
+  }
+  .caja-cont-cat-head{
+    display: inline-block;
+  }
+  .title-cat-prod{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+  .btn-cat-prod{
+    width: 100%;
+    display: flex;
+  }
+  .cerrar-caja-cat{
+    display: contents;
+  }
+  .h2-cat-block{
+    display: block;
+    text-align: center;
+  }
+  .btn-cat-prod{
+    justify-content: center;
+  }
+  .btn-cat-prod button{
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+  .img-mini-logo-01{
+    width: 60%;
   }
   /*------ALMACEN------*/
   .App-almacen{

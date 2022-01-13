@@ -5,8 +5,6 @@ import imgFile from '../img/file-img.png';
 import imgFileInactive from '../img/file-img-inactive.png';
 
 import TableProductos from "./TableProd";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 function TableProductosCatPrin() {
 
@@ -88,14 +86,31 @@ function TableProductosCatPrin() {
         }
     };
 
+    const [styleMenu, setStyleMenu] = useState("div-off");
+    const [styleMenuButton, setStyleMenuButton] = useState("div-on-flex");
+
+    const changeStyleMenu = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-on-flex");
+        setStyleMenuButton("div-off");
+    };
+
+    const changeStyleMenux = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
     return(
         <div className="cont-prod-cat-prin" onClick={changeStyleOptionsDivx}>
             <div className="cont-fila-cat-head">
                 <div className="caja-cont-cat-head">
-                    <div className="title-cat">
-                        <h2 className="h2-cat"><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>CATEGORIAS</h2>
+                    <div className="title-cat title-cat-prod">
+                        <h2 className="h2-cat h2-cat-block"><span className="icon icon-prod-nav"><ion-icon name="layers-outline"></ion-icon></span>CATEGORIAS</h2>
                     </div>
-                    <div className="button-cat">
+                    <div className="button-cat btn-cat-prod">
                         <button type="button"  onClick={() => toggle_102()} className="btn btn-color-principal" ><span className="icon-boton"><ion-icon name="add-circle-outline"></ion-icon></span>Agregar Categoría</button>
 
                         <Modal isOpen={modal_102} toggle={toggle_102}>
@@ -139,9 +154,11 @@ function TableProductosCatPrin() {
                     <div className="icon-nav">
                                 <span className="icon icon-prod-nav-prin">
                                     <ion-icon name="git-merge-outline"></ion-icon>
-                                </span><h3 className="h3-nav-icon">CATEGORIAS</h3>
+                                </span><h3 className="h3-nav-icon h3-nav-icon-cat padding-10">CATEGORIAS</h3>
+                        <h3 className={styleMenuButton + " h3-nav-icon h3-nav-icon-off padding-10"} onClick={changeStyleMenu}>CATEGORIAS</h3>
+                        <h3 className={styleMenu + " h3-nav-icon h3-nav-icon-off padding-10"} onClick={changeStyleMenux}>CATEGORIAS</h3>
                     </div>
-                    <ul className="nav-ul">
+                    <ul className="nav-ul nav-ul-off-cat">
                         <li className="nav-li">
                             <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
                         </li>
@@ -149,14 +166,15 @@ function TableProductosCatPrin() {
                             <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
                         </li>
                     </ul>
-                    <div className="cont-search">
-                        <input className="form-control inputBuscar" placeholder="Búscar..."/>
-                        <button className="btn bg-almacen color-white">
-                            <FontAwesomeIcon icon={faSearch}/>
-                        </button>
-                    </div>
                 </nav>
-
+                <ul className={styleMenu + " nav-ul nav-ul-desplegable-off"}>
+                    <li className="nav-li  nav-li-desplegable">
+                        <a className={styleA + " nav-link"} href="#" onClick={changeStyleA}><span className="icon icon-prod-nav"><ion-icon name="checkmark-circle-outline"></ion-icon></span>Activos</a>
+                    </li>
+                    <li className="nav-li  nav-li-desplegable">
+                        <a className={styleB + " nav-link"} href="#" onClick={changeStyleB}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                    </li>
+                </ul>
             </div>
 
             <div id="item-table-01" className={stylea}>
@@ -165,7 +183,7 @@ function TableProductosCatPrin() {
                         <div className="caja-cont-cat">
                             <div className="title-cat title-cat-box">
                                 <div className="title-cat-box-flex">
-                                    <span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria 01
+                                    <span className="icon icon-prod-nav"><ion-icon name="folder-outline"></ion-icon></span>Categoria_01
                                 </div>
                                 <div className="icon-options-box">
                                     <a href="#" onClick={changeStyleOptions} className={styleOptionsButton + " nav-link nav-link-box"}><span className="icon icon-prod-nav"><ion-icon name="ellipsis-vertical-outline"></ion-icon></span></a>

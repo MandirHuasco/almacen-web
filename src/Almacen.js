@@ -85,6 +85,73 @@ function Almacen() {
         setOscuroButtonOn("div-off")
     };
 
+    const [styleMenu, setStyleMenu] = useState("div-off");
+    const [styleMenuButton, setStyleMenuButton] = useState("div-on-flex");
+
+    const changeStyleMenu = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-on-flex");
+        setStyleMenuButton("div-off");
+    };
+
+    const changeStyleMenux = () => {
+        console.log("action-options");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleAlmMenuA = () => {
+        console.log("menu-action-Alm-A");
+
+        setStyleAlm("pading-card-active");
+
+        setStyleAlmA("nav-border-bottom-active");
+        setStyleAlma("table-on");
+
+        setStyleAlmB("");
+        setStyleAlmb("table-off");
+
+        setStyleAlmx("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleAlmMenuB = () => {
+        console.log("menu-action-Alm-A");
+
+        setStyleAlm("pading-card-active");
+
+        setStyleAlmA("");
+        setStyleAlma("table-off");
+
+        setStyleAlmB("nav-border-bottom-active");
+        setStyleAlmb("table-on");
+
+        setStyleAlmx("table-on");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
+
+    const changeStyleAlmMenuX = () => {
+        console.log("menu-action-Alm-x");
+
+        setStyleAlm("");
+
+        setStyleAlmA("");
+        setStyleAlma("table-off");
+
+        setStyleAlmB("");
+        setStyleAlmb("table-off");
+
+        setStyleAlmx("table-off");
+
+        setStyleMenu("div-off");
+        setStyleMenuButton("div-on-flex");
+    };
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [modal_103, setModal_103] = useState(false);
@@ -137,8 +204,8 @@ function Almacen() {
                             </ModalFooter>
                         </Modal>
 
-                        <button type="button" onClick={ModoOScuro} className={oscuroButton + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
-                        <button type="button" onClick={ModoClaro} className={oscuroButtonOn + " btn btn-color-principal"}><span className="icon-boton"><ion-icon name="sunny-outline"></ion-icon></span>Modo Claro</button>
+                        <button type="button" onClick={ModoOScuro} className={oscuroButton + " btn btn-color-principal btn-disabled"}><span className="icon-boton"><ion-icon name="moon-outline"></ion-icon></span>Modo Oscuro</button>
+                        <button type="button" onClick={ModoClaro} className={oscuroButtonOn + " btn btn-color-principal btn-disabled"}><span className="icon-boton"><ion-icon name="sunny-outline"></ion-icon></span>Modo Claro</button>
                     </div>
                 </div>
 
@@ -149,24 +216,37 @@ function Almacen() {
                                     <ion-icon name="git-merge-outline"></ion-icon>
                                 </span><h3 className="h3-nav-icon">ALMACENAMIENTO</h3>
                         </div>
-                        <ul className="nav-ul">
+                        <div className="menu-desplegar">
+                            <ul className="nav-ul">
+                                <li className="nav-li">
+                                    <a className={styleMenuButton + " nav-link"} href="#" onClick={changeStyleMenu}><span className="icon icon-prod-nav"><ion-icon name="ellipsis-vertical-outline"></ion-icon></span>Menú</a>
+                                    <a className={styleMenu + " nav-link"} href="#" onClick={changeStyleMenux}><span className="icon icon-prod-nav"><ion-icon name="ellipsis-vertical-outline"></ion-icon></span>Menú</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul className="nav-ul nav-ul-desplegable nav-ul-desplegable-on">
                             <li className="nav-li">
-                                <a className={styleAlmA + " nav-link"} href="#" onClick={changeStyleAlmA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Almacenes</a>
+                                <a href="#" className={styleAlmA + " nav-link"} onClick={changeStyleAlmA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Almacenes</a>
                             </li>
                             <li className="nav-li">
-                                <a className={styleAlmB + " nav-link"} href="#" onClick={changeStyleAlmB}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                                <a href="#" className={styleAlmB + " nav-link"} onClick={changeStyleAlmB}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
                             </li>
                             <li className={styleAlmx + " nav-li"}>
                                 <a className=" nav-link" href="#" onClick={changeStyleAlmX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
                             </li>
                         </ul>
-                        <div className={styleAlmx + " cont-search"}>
-                            <input className="form-control inputBuscar" placeholder="Búscar..."/>
-                            <button className="btn bg-almacen color-white">
-                                <FontAwesomeIcon icon={faSearch}/>
-                            </button>
-                        </div>
                     </nav>
+                    <ul className={styleMenu + " nav-ul nav-ul-desplegable-off nav-ul nav-ul-desplegable-off-alm"}>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleAlmA + " nav-link"} href="#" onClick={changeStyleAlmMenuA}><span className="icon icon-prod-nav"><ion-icon name="apps-outline"></ion-icon></span>Almacenes</a>
+                        </li>
+                        <li className="nav-li nav-li-desplegable">
+                            <a className={styleAlmB + " nav-link"} href="#" onClick={changeStyleAlmMenuB}><span className="icon icon-prod-nav"><ion-icon name="close-circle-outline"></ion-icon></span>Inactivos</a>
+                        </li>
+                        <li className={styleAlmx + " nav-li nav-li-desplegable"}>
+                            <a className=" nav-link" href="#" onClick={changeStyleAlmMenuX}><span className="icon icon-prod-nav"><ion-icon name="close-outline"></ion-icon></span>Cerrar</a>
+                        </li>
+                    </ul>
 
                     <div id="item-table-01" className={styleAlma + " " + oscuroCardsFont}>
                         <AlmacenPrin/>

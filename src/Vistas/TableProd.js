@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import {Container, Card, CardContent, makeStyles, Grid, TextField, Button} from '@material-ui/core';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import QRCode from "qrcode";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+
 
 function TableProductos() {
 
@@ -25,6 +28,12 @@ function TableProductos() {
 
     return(
         <div className="scrolling-wrapper">
+            <div className="cont-search margin-top-bottom-10">
+                <input className="form-control inputBuscar" placeholder="Búscar..."/>
+                <button className="btn bg-almacen color-white">
+                    <FontAwesomeIcon icon={faSearch}/>
+                </button>
+            </div>
             <div className="cont-table-prod">
                 <table className="table-cont-prod">
                     <thead>
